@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>线路发布 · 机构端 · 研学澄心</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark" data-icon="logo"></span>
+      <span>
+        <span class="brand-name">研学澄心</span>
+        <span class="brand-sub" style="display:block">机构端</span>
+      </span>
+    </a>
+    <nav class="nav-main">
+      <a class="nav-item" href="index.html">工作台</a>
+      <a class="nav-item" href="quals.html">资质管理</a>
+      <a class="nav-item active" href="routes.html">线路发布</a>
+      <a class="nav-item" href="orders.html">订单报名</a>
+      <a class="nav-item" href="settlement.html">结算对账</a>
+    </nav>
+    <div class="top-actions">
+      <div class="top-search"><span data-icon="search" data-size="14"></span><input placeholder="搜索线路 / 订单 / 活动…"></div>
+      <button class="icon-btn" data-theme-toggle data-theme-ic title="切换明暗主题"></button>
+      <button class="icon-btn" title="通知"><span data-icon="bell"></span><span class="badge-dot"></span></button>
+      <div class="user-chip">
+        <span class="avatar">何</span>
+        <span><span class="u-name" style="display:block">何老师</span><span class="u-role" style="display:block">启程研学教育 · 机构管理员</span></span>
+        <span data-icon="chevD" data-size="13"></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="breadcrumb">
+    <a href="index.html">机构端</a><span class="sep">/</span><span class="cur">线路发布</span>
+  </div>
+  <div class="page-head">
+    <div>
+      <h1 class="page-title">线路发布（独立备案）</h1>
+      <p class="page-sub">备案以本机构为独立主体 · 备案通过仅对本机构有效 · 其他机构不可引用</p>
+    </div>
+    <div class="page-actions">
+      <button class="btn primary" onclick="openEdit()"><span data-icon="plus" data-size="13"></span>新建线路</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="toolbar" id="mainList">
+      <div class="search-box"><span data-icon="search" data-size="13"></span><input placeholder="搜索线路名称" data-search data-scope="#mainList"></div>
+      <select class="select" style="width:130px" data-filter-select="fstatus" data-scope="#mainList">
+        <option value="all">全部状态</option><option value="draft">草稿</option><option value="audit">审核中</option><option value="ok">已备案</option><option value="bad">已驳回</option><option value="off">已下架</option>
+      </select>
+      <span class="spacer"></span>
+      <span class="small muted">共 4 条线路</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>线路名称</th><th>主题</th><th>适合年级</th><th>时长 / 目的地</th><th>收费</th><th>状态</th><th style="text-align:right">操作</th></tr></thead>
+        <tbody>
+          <tr data-searchable data-fstatus="ok">
+            <td class="t-main">湿地生态研学营<div class="t-sub">R-2026-071 · 备案通过 2026-07-18 · 已承办 3 场</div></td>
+            <td><span class="tag">自然生态</span></td><td>3-6 年级</td><td>1 天 · 晴川湿地公园</td><td class="num">¥328/人</td>
+            <td><span class="pill ok"><span class="dot"></span>已备案</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openEdit('湿地生态研学营')">编辑</button><button class="btn ghost sm" onclick="copyTpl('湿地生态研学营')"><span data-icon="copy" data-size="12"></span>复制为模板</button></div></td>
+          </tr>
+          <tr data-searchable data-fstatus="audit">
+            <td class="t-main">湿地观鸟小课堂<div class="t-sub">R-2026-075 · 提交备案 2026-09-07 · 教育局审核中</div></td>
+            <td><span class="tag">自然生态</span></td><td>3-6 年级</td><td>半天 · 晴川湿地公园</td><td class="num">¥168/人</td>
+            <td><span class="pill warn"><span class="dot"></span>审核中</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openEdit('湿地观鸟小课堂')">查看</button><button class="btn danger sm" onclick="Toast('已撤回备案申请（审批人未处理）','ok')">撤回</button></div></td>
+          </tr>
+          <tr data-searchable data-fstatus="draft">
+            <td class="t-main">夜探昆虫世界<div class="t-sub">草稿 · 上次编辑 2026-09-08</div></td>
+            <td><span class="tag">自然生态</span></td><td>3-5 年级</td><td>1 天 · 晴川植物园</td><td class="num">¥238/人</td>
+            <td><span class="pill gray">草稿</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn primary sm" onclick="openEdit('夜探昆虫世界')">继续编辑</button><button class="btn danger sm" onclick="Toast('草稿已删除','ok')">删除</button></div></td>
+          </tr>
+          <tr data-searchable data-fstatus="bad">
+            <td class="t-main">峡谷徒步挑战营<div class="t-sub">R-2026-058 · 因安全整改被强制下架 2026-08-15</div></td>
+            <td><span class="tag">自然生态</span></td><td>6-8 年级</td><td>1 天 · 雾岭峡谷</td><td class="num">¥298/人</td>
+            <td><span class="pill gray">已下架</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="Toast('下架原因：安全检查隐患，整改后可重新提交备案','warn')">查看下架原因</button></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pager"><span>已备案线路可通过「复制为模板」快速新建同类线路，仍需重新提交备案</span></div>
+  </div>
+</main>
+
+<footer class="foot">
+  研学澄心 · 高保真原型 V5 · 设计语言「晴空极简」（松石青 / 无侧栏顶部通栏 / 明暗双主题）<br>
+  演示区：晴川区 · 演示数据为虚构样本
+</footer>
+
+<script src="../assets/proto.js"></script>
+<script>
+function openEdit(name) {
+  const t = name ? `编辑线路 · ${name}` : '新建线路';
+  openDrawer(`
+    <div class="drawer-head"><div><div class="card-title" style="font-size:15px">${t}</div><div class="small muted">备案以本机构为独立主体 · 通过仅本机构有效</div></div><button class="icon-btn" data-close><span data-icon="x" data-size="14"></span></button></div>
+    <div class="drawer-body">
+      <div class="sec-head">基本信息</div>
+      <div class="form-grid">
+        <div class="field"><div class="label"><span class="req">*</span>线路名称</div><input class="input" value="${name || '夜探昆虫世界'}"></div>
+        <div class="field"><div class="label"><span class="req">*</span>主题</div><select class="select"><option>自然生态</option><option>劳动实践</option><option>人文历史</option><option>科技工业</option><option>传统文化</option></select></div>
+        <div class="field"><div class="label"><span class="req">*</span>适合年级</div><select class="select"><option>3-6 年级</option><option>1-3 年级</option><option>4-6 年级</option><option>6-8 年级</option></select></div>
+        <div class="field"><div class="label"><span class="req">*</span>时长</div><select class="select"><option>1 天</option><option>半天</option><option>2 天 1 夜</option></select></div>
+        <div class="field"><div class="label"><span class="req">*</span>目的地</div><input class="input" value="晴川湿地公园"></div>
+        <div class="field"><div class="label"><span class="req">*</span>收费</div><input class="input num" value="328 元/人"></div>
+      </div>
+      <div class="sec-head mt-16">配图</div>
+      <div class="upload-box" onclick="Toast('已选择图片：湿地营-封面.jpg','ok')"><span data-icon="upload" data-size="18" style="display:block;margin:0 auto 6px"></span>上传线路配图（建议 16:9，最多 6 张）</div>
+      <div class="sec-head mt-16">每日行程</div>
+      <textarea class="textarea" style="min-height:88px">08:00 学校集合出发
+09:00 抵达湿地公园 · 开营与安全教育
+09:30 湿地生态观察课 · 鸟类辨识
+11:30 午餐与休息
+13:00 湿地水质检测实验
+15:00 生态笔记总结 · 结营分享
+16:00 返程</textarea>
+      <div class="sec-head mt-16">课程方案 / 安全预案 / 费用说明</div>
+      <div class="file-row"><span class="f-ic" data-icon="doc"></span><div><div class="f-name">课程方案.pdf</div><div class="f-meta">课程目标 · 课时安排 · 导师配比 1:15</div></div><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('已选择新文件（演示）','ok')"><span data-icon="upload" data-size="12"></span>替换</button></div>
+      <div class="file-row"><span class="f-ic" data-icon="doc"></span><div><div class="f-name">安全预案.pdf</div><div class="f-meta">水域防护 · 医疗应急 · 保险方案</div></div><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('已选择新文件（演示）','ok')"><span data-icon="upload" data-size="12"></span>替换</button></div>
+      <div class="file-row"><span class="f-ic" data-icon="doc"></span><div><div class="f-name">费用说明.pdf</div><div class="f-meta">费用构成明细 · 无隐形收费</div></div><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('已选择新文件（演示）','ok')"><span data-icon="upload" data-size="12"></span>替换</button></div>
+    </div>
+    <div class="drawer-foot"><button class="btn ghost" data-close>存为草稿</button><button class="btn primary" onclick="Toast('已提交教育局备案审核，通过后仅对本机构生效','ok');closeOverlay(document.querySelector('.drawer-mask'))"><span data-icon="send" data-size="13"></span>提交备案</button></div>`, { width: 'lg' });
+}
+function copyTpl(name) {
+  openModal(`
+    <div class="modal-head"><div class="modal-title">复制为模板 · ${name}</div><button class="icon-btn" data-close><span data-icon="x" data-size="14"></span></button></div>
+    <div class="modal-body"><div class="banner brand mb-8"><span class="b-ic" data-icon="copy" data-size="14"></span><div>将复制「${name}」的全部行程、课程方案与安全预案为新线路草稿。复制后需重新提交备案，<b>备案通过仅对本机构有效</b>。</div></div><div class="field"><div class="label">新线路名称</div><input class="input" value="${name}（秋季版）"></div></div>
+    <div class="modal-foot"><button class="btn ghost" data-close>取消</button><button class="btn primary" onclick="Toast('已复制为新草稿，可继续编辑','ok');closeOverlay(document.querySelector('.overlay-mask'))">确认复制</button></div>`);
+}
+</script>
+</body>
+</html>

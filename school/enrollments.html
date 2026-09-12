@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>报名管理 · 学校使用端 · 研学澄心</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark" data-icon="logo"></span>
+      <span>
+        <span class="brand-name">研学澄心</span>
+        <span class="brand-sub" style="display:block">学校使用端</span>
+      </span>
+    </a>
+    <nav class="nav-main">
+      <a class="nav-item" href="index.html">工作台</a>
+      <a class="nav-item" href="activities.html">活动申报</a>
+      <a class="nav-item active" href="enrollments.html">报名管理</a>
+      <a class="nav-item" href="archive.html">学生档案</a>
+    </nav>
+    <div class="top-actions">
+      <div class="top-search"><span data-icon="search" data-size="14"></span><input placeholder="搜索活动 / 学生…"></div>
+      <button class="icon-btn" data-theme-toggle data-theme-ic title="切换明暗主题"></button>
+      <button class="icon-btn" title="通知"><span data-icon="bell"></span><span class="badge-dot"></span></button>
+      <div class="user-chip">
+        <span class="avatar">赵</span>
+        <span><span class="u-name" style="display:block">赵老师</span><span class="u-role" style="display:block">晴川实验小学 · 学校管理员</span></span>
+        <span data-icon="chevD" data-size="13"></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="breadcrumb">
+    <a href="index.html">学校使用端</a><span class="sep">/</span><span class="cur">报名管理</span>
+  </div>
+  <div class="page-head">
+    <div>
+      <h1 class="page-title">报名管理 · 湿地生态研学营</h1>
+      <p class="page-sub">2026-10-17 · 启程研学教育承办 · 三年级 2 班 / 5 班 · 报名截止 2026-09-30（可手动提前关闭）</p>
+    </div>
+    <div class="page-actions">
+      <button class="btn ghost" onclick="openSetting()"><span data-icon="settings" data-size="13"></span>报名设置</button>
+      <button class="btn danger" onclick="closeEarly()">手动提前关闭</button>
+      <button class="btn primary" onclick="Toast('已导出全名单.xlsx（含全部字段，不含分组信息）','ok')"><span data-icon="download" data-size="13"></span>导出 Excel 全名单</button>
+    </div>
+  </div>
+
+  <div class="grid grid-5 mb-16">
+    <div class="kpi"><span class="k-icon" data-icon="users"></span><div class="k-body"><div class="k-label">已报名</div><div class="k-value" style="font-size:24px">86 <small>/ 96 人</small></div><div class="k-foot">占上限 89.6%</div></div></div>
+    <div class="kpi"><span class="k-icon blue" data-icon="user"></span><div class="k-body"><div class="k-label">未报名</div><div class="k-value" style="font-size:24px">10 <small>人</small></div><div class="k-foot">报名截止前自动提醒</div></div></div>
+    <div class="kpi"><span class="k-icon amber" data-icon="clock"></span><div class="k-body"><div class="k-label">候补</div><div class="k-value" style="font-size:24px">14 <small>人</small></div><div class="k-foot">退出自动递补 · 截止行前 48h</div></div></div>
+    <div class="kpi"><span class="k-icon pink" data-icon="pen"></span><div class="k-body"><div class="k-label">同意书签署</div><div class="k-value" style="font-size:24px">86 <small>/ 86</small></div><div class="k-foot">电子知情同意书 100%</div></div></div>
+    <div class="kpi"><span class="k-icon" data-icon="band" style="background:var(--warn-soft);color:var(--warn)"></span><div class="k-body"><div class="k-label">特殊需求标注</div><div class="k-value" style="font-size:24px">7 <small>人</small></div><div class="k-foot">过敏史 3 · 饮食禁忌 2 · 慢性病 2</div></div></div>
+  </div>
+
+  <div class="banner brand mb-16"><span class="b-ic" data-icon="info" data-size="14"></span><div><b>一键归集：</b>学生姓名 / 性别 / 班级 / 学籍号 / 家长联系方式自动汇总，特殊需求（过敏史、饮食禁忌、慢性病）自动标注。<b>候补规则：</b>满员后自动候补，有人退出按顺序自动递补并通知家长，递补截止时间为行前 48 小时。</div></div>
+
+  <div class="card">
+    <div class="card-head"><div><div class="card-title">报名名单（演示样本 8 / 86）</div><div class="card-sub">特殊需求自动标注 · 同意书签署状态实时同步</div></div>
+      <div class="search-box"><span data-icon="search" data-size="13"></span><input placeholder="搜索姓名 / 学籍号" data-search data-scope="#mainList"></div>
+    </div>
+    <div class="tbl-wrap" id="mainList">
+      <table class="tbl">
+        <thead><tr><th>学生姓名</th><th>性别</th><th>班级</th><th>学籍号</th><th>家长联系方式</th><th>特殊需求</th><th>同意书</th><th>报名时间</th><th>状态</th></tr></thead>
+        <tbody>
+          <tr data-searchable>
+            <td class="t-main">苏小禾</td><td>女</td><td>三年级 2 班</td><td class="num mono">QCSY202300218</td><td class="num">138****3528</td>
+            <td><span class="pill gray">无</span></td><td><span class="pill ok"><span class="dot"></span>已签署</span></td><td class="num">09-10 14:20</td><td><span class="pill ok"><span class="dot"></span>已支付</span></td>
+          </tr>
+          <tr data-searchable>
+            <td class="t-main">陈嘉树</td><td>男</td><td>三年级 2 班</td><td class="num mono">QCSY202300105</td><td class="num">137****6012</td>
+            <td><span class="pill bad"><span class="dot"></span>花生过敏</span></td><td><span class="pill ok"><span class="dot"></span>已签署</span></td><td class="num">09-08 19:03</td><td><span class="pill ok"><span class="dot"></span>已支付</span></td>
+          </tr>
+          <tr data-searchable>
+            <td class="t-main">黄诗涵</td><td>女</td><td>三年级 5 班</td><td class="num mono">QCSY202300314</td><td class="num">159****7743</td>
+            <td><span class="pill warn"><span class="dot"></span>忌海鲜</span></td><td><span class="pill ok"><span class="dot"></span>已签署</span></td><td class="num">09-09 08:12</td><td><span class="pill ok"><span class="dot"></span>已支付</span></td>
+          </tr>
+          <tr data-searchable>
+            <td class="t-main">方小乐</td><td>男</td><td>三年级 2 班</td><td class="num mono">QCSY202300256</td><td class="num">136****2281</td>
+            <td><span class="pill bad"><span class="dot"></span>哮喘史 · 需随身备药</span></td><td><span class="pill ok"><span class="dot"></span>已签署</span></td><td class="num">09-08 20:44</td><td><span class="pill ok"><span class="dot"></span>已支付</span></td>
+          </tr>
+          <tr data-searchable>
+            <td class="t-main">林朵朵</td><td>女</td><td>三年级 5 班</td><td class="num mono">QCSY202300371</td><td class="num">151****8860</td>
+            <td><span class="pill info"><span class="dot"></span>易晕车</span></td><td><span class="pill ok"><span class="dot"></span>已签署</span></td><td class="num">09-07 15:30</td><td><span class="pill ok"><span class="dot"></span>已支付</span></td>
+          </tr>
+          <tr data-searchable>
+            <td class="t-main">罗一鸣</td><td>男</td><td>三年级 2 班</td><td class="num mono">QCSY202300190</td><td class="num">158****3327</td>
+            <td><span class="pill gray">无</span></td><td><span class="pill ok"><span class="dot"></span>已签署</span></td><td class="num">09-11 10:02</td>
+            <td><span class="pill warn"><span class="dot"></span>候补第 1 位</span></td>
+          </tr>
+          <tr data-searchable>
+            <td class="t-main">韩雨辰</td><td>女</td><td>三年级 5 班</td><td class="num mono">QCSY202300342</td><td class="num">150****1198</td>
+            <td><span class="pill gray">无</span></td><td><span class="pill ok"><span class="dot"></span>已签署</span></td><td class="num">09-11 13:26</td>
+            <td><span class="pill warn"><span class="dot"></span>候补第 2 位</span></td>
+          </tr>
+          <tr data-searchable>
+            <td class="t-main">孟梓萱</td><td>女</td><td>三年级 2 班</td><td class="num mono">QCSY202300233</td><td class="num">152****4405</td>
+            <td><span class="pill warn"><span class="dot"></span>忌辛辣</span></td><td><span class="pill ok"><span class="dot"></span>已签署</span></td><td class="num">09-10 16:55</td><td><span class="pill ok"><span class="dot"></span>已支付</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pager"><span>导出 Excel 含全部字段 · <b>不含分组信息</b>（学校线下自行安排分组）· 共 86 人 + 候补 14 人</span><div class="pg-btns"><button class="pg-btn" disabled>&lt;</button><button class="pg-btn on">1</button><button class="pg-btn">2</button><button class="pg-btn">&gt;</button></div></div>
+  </div>
+</main>
+
+<footer class="foot">
+  研学澄心 · 高保真原型 V5 · 设计语言「晴空极简」（松石青 / 无侧栏顶部通栏 / 明暗双主题）<br>
+  演示区：晴川区 · 演示数据为虚构样本
+</footer>
+
+<script src="../assets/proto.js"></script>
+<script>
+function openSetting() {
+  openModal(`
+    <div class="modal-head"><div class="modal-title">报名设置 · 湿地生态研学营</div><button class="icon-btn" data-close><span data-icon="x" data-size="14"></span></button></div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="field"><div class="label"><span class="req">*</span>报名开始时间</div><input class="input num" value="2026-09-05 08:00"></div>
+        <div class="field"><div class="label"><span class="req">*</span>报名截止时间</div><input class="input num" value="2026-09-30 20:00"></div>
+        <div class="field"><div class="label"><span class="req">*</span>报名人数上限</div><input class="input num" value="96"></div>
+        <div class="field"><div class="label">候补递补截止</div><input class="input num" value="2026-10-15 00:00（行前 48 小时，自动）" disabled></div>
+      </div>
+      <div class="banner gray mt-8"><span class="b-ic" data-icon="clock" data-size="14"></span><div>到达截止时间自动关闭；也可手动提前关闭。满员后报名自动进入候补队列。</div></div>
+    </div>
+    <div class="modal-foot"><button class="btn ghost" data-close>取消</button><button class="btn primary" onclick="Toast('报名设置已保存，已推送至指定年级/班级家长','ok');closeOverlay(document.querySelector('.overlay-mask'))">保存</button></div>`);
+}
+function closeEarly() {
+  openModal(`
+    <div class="modal-head"><div class="modal-title">手动提前关闭报名</div><button class="icon-btn" data-close><span data-icon="x" data-size="14"></span></button></div>
+    <div class="modal-body"><div class="banner warn mb-8"><span class="b-ic" data-icon="alert" data-size="14"></span><div>关闭后家长端报名入口立即失效，已报名与候补记录不受影响。当前尚有 <b>10 人未报名</b>，关闭后将推送提示。</div></div><div class="field"><div class="label">关闭原因（同步至家长端）</div><textarea class="textarea" placeholder="如：名额已满 / 车辆座位已确认"></textarea></div></div>
+    <div class="modal-foot"><button class="btn ghost" data-close>取消</button><button class="btn danger" onclick="Toast('报名已提前关闭，未报名家长已收到通知','ok');closeOverlay(document.querySelector('.overlay-mask'))">确认关闭</button></div>`);
+}
+</script>
+</body>
+</html>

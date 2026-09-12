@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>研学澄心 · 区县教育局研学管理平台（高保真原型）</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" data-icon="logo"></span>
+      <span>
+        <span class="brand-name">研学澄心</span>
+        <span class="brand-sub" style="display:block">区县教育局研学管理平台</span>
+      </span>
+    </a>
+    <nav class="nav-main">
+      <a class="nav-item active" href="index.html">演示入口</a>
+      <a class="nav-item" href="#spec">设计规范</a>
+      <a class="nav-item" href="edu/index.html">教育局端</a>
+      <a class="nav-item" href="school/index.html">学校端</a>
+      <a class="nav-item" href="org/index.html">机构端</a>
+      <a class="nav-item" href="parent/home.html">家长端</a>
+    </nav>
+    <div class="top-actions">
+      <div class="top-search"><span data-icon="search" data-size="14"></span><input placeholder="搜索页面 / 功能…"></div>
+      <button class="icon-btn" data-theme-toggle data-theme-ic title="切换明暗主题"></button>
+      <button class="icon-btn" title="通知"><span data-icon="bell"></span><span class="badge-dot"></span></button>
+      <div class="user-chip">
+        <span class="avatar">客</span>
+        <span><span class="u-name" style="display:block">演示访客</span><span class="u-role" style="display:block">晴川区 · 演示环境</span></span>
+        <span data-icon="chevD" data-size="13"></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-mark" data-icon="logo" data-size="30"></div>
+    <h1>研学澄心</h1>
+    <p class="hero-sub">区县教育局研学管理平台 · 高保真原型</p>
+    <p class="hero-desc">以区县教育局为监管核心，覆盖「机构准入 — 线路备案 — 学校审批 — 家长报名 — 安全监管 — 档案沉淀 — 资金自动分账」全链路，多区县 SaaS 架构。</p>
+  </section>
+
+  <div class="role-grid">
+    <a class="role-card" href="edu/index.html">
+      <span class="rc-ic" data-icon="dashboard" data-size="20"></span>
+      <div class="rc-name">教育局管理端</div>
+      <div class="rc-role">Web 后台 · 监管与审批</div>
+      <p class="rc-desc">年度数据看板、学校/机构管理、线路审核、两级活动审批、资金分账对账、安全应急、全局档案。</p>
+      <span class="rc-go">进入演示 <span data-icon="arrowR" data-size="13"></span></span>
+    </a>
+    <a class="role-card" href="school/index.html">
+      <span class="rc-ic" data-icon="school" data-size="20"></span>
+      <div class="rc-name">学校使用端</div>
+      <div class="rc-role">Web 后台 · 活动组织与报名</div>
+      <p class="rc-desc">活动申报（两级审批）、报名一键归集、候补递补、行前行后管理、本校学生研学档案。</p>
+      <span class="rc-go">进入演示 <span data-icon="arrowR" data-size="13"></span></span>
+    </a>
+    <a class="role-card" href="org/index.html">
+      <span class="rc-ic" data-icon="org" data-size="20"></span>
+      <div class="rc-name">机构端</div>
+      <div class="rc-role">Web 后台 · 产品与履约</div>
+      <p class="rc-desc">资质维护、线路独立备案、订单与报名名单、安全上报、结算自动到账（98%）与对账凭证。</p>
+      <span class="rc-go">进入演示 <span data-icon="arrowR" data-size="13"></span></span>
+    </a>
+    <a class="role-card" href="parent/home.html">
+      <span class="rc-ic" data-icon="phone" data-size="20"></span>
+      <div class="rc-name">家长报名支付端</div>
+      <div class="rc-role">微信小程序 · 手机演示</div>
+      <p class="rc-desc">学生关联与多子女切换、活动报名、手写签名电子知情同意书、微信支付（资金全程存管）、评价与档案。</p>
+      <span class="rc-go">进入演示 <span data-icon="arrowR" data-size="13"></span></span>
+    </a>
+  </div>
+
+  <section class="spec-section" id="spec">
+    <h2 class="spec-title">设计规范速览 · 晴空极简</h2>
+    <div class="card card-pad">
+      <div class="sec-head">色板（明色主题 / 暗色主题自动切换）</div>
+      <div class="swatch-row">
+        <div class="swatch"><div class="sw-c" style="background:#0f766e"></div>品牌 松石青<br>#0F766E</div>
+        <div class="swatch"><div class="sw-c" style="background:#e7f5f2"></div>品牌浅底<br>#E7F5F2</div>
+        <div class="swatch"><div class="sw-c" style="background:#f6f8fb"></div>页面底<br>#F6F8FB</div>
+        <div class="swatch"><div class="sw-c" style="background:#ffffff"></div>卡片<br>#FFFFFF</div>
+        <div class="swatch"><div class="sw-c" style="background:#e6eaf2"></div>描边<br>#E6EAF2</div>
+        <div class="swatch"><div class="sw-c" style="background:#1c2b3a"></div>主文字<br>#1C2B3A</div>
+        <div class="swatch"><div class="sw-c" style="background:#55677d"></div>次文字<br>#55677D</div>
+        <div class="swatch"><div class="sw-c" style="background:#16a34a"></div>成功<br>#16A34A</div>
+        <div class="swatch"><div class="sw-c" style="background:#d97706"></div>警告<br>#D97706</div>
+        <div class="swatch"><div class="sw-c" style="background:#dc2626"></div>危险<br>#DC2626</div>
+        <div class="swatch"><div class="sw-c" style="background:#2563eb"></div>信息<br>#2563EB</div>
+      </div>
+      <hr class="hr">
+      <div class="sec-head">图表色板（经 CVD/对比度校验，白卡表面）</div>
+      <div class="swatch-row">
+        <div class="swatch"><div class="sw-c" style="background:#0d9488"></div>序列 1<br>#0D9488</div>
+        <div class="swatch"><div class="sw-c" style="background:#d97706"></div>序列 2<br>#D97706</div>
+        <div class="swatch"><div class="sw-c" style="background:#2563eb"></div>序列 3<br>#2563EB</div>
+        <div class="swatch"><div class="sw-c" style="background:#db2777"></div>序列 4<br>#DB2777</div>
+        <div class="swatch"><div class="sw-c" style="background:#7c3aed"></div>序列 5<br>#7C3AED</div>
+        <div class="swatch"><div class="sw-c" style="background:#a16207"></div>序列 6<br>#A16207</div>
+      </div>
+      <hr class="hr">
+      <div class="spec-demo">
+        <span class="sd-label">按钮</span>
+        <button class="btn primary"><span data-icon="plus" data-size="13"></span>主要按钮</button>
+        <button class="btn ghost"><span data-icon="download" data-size="13"></span>描边按钮</button>
+        <button class="btn soft">浅色按钮</button>
+        <button class="btn danger">危险操作</button>
+        <button class="btn primary lg">大按钮</button>
+        <button class="btn ghost sm">小按钮</button>
+      </div>
+      <div class="spec-demo">
+        <span class="sd-label">状态标签（全圆角）</span>
+        <span class="pill ok"><span class="dot"></span>已备案</span>
+        <span class="pill warn"><span class="dot"></span>审核中</span>
+        <span class="pill bad"><span class="dot"></span>已驳回</span>
+        <span class="pill info"><span class="dot"></span>进行中</span>
+        <span class="pill gray">已结束</span>
+        <span class="pill brand"><span class="dot"></span>报名中</span>
+        <span class="credit A">A</span>
+        <span class="credit B">B</span>
+        <span class="credit C">C</span>
+        <span class="credit D">D</span>
+      </div>
+      <div class="spec-demo">
+        <span class="sd-label">KPI 数字（tabular-nums 等宽数字）</span>
+        <span class="num" style="font-size:32px;font-weight:600;letter-spacing:-.5px">1,286,400</span>
+        <span class="num" style="font-size:28px;font-weight:600;color:var(--brand)">324,600</span>
+        <span class="num" style="font-size:24px;font-weight:600;color:var(--ink-2)">167,435</span>
+      </div>
+      <div class="spec-demo">
+        <span class="sd-label">布局语言</span>
+        <span class="tag">无侧栏 · 顶部通栏导航</span>
+        <span class="tag">内容区 max-width 1440px 居中</span>
+        <span class="tag">卡片圆角 10px / 按钮 8px</span>
+        <span class="tag">细描边 + 极浅阴影</span>
+        <span class="tag">导航 active：文字 + 2px 品牌短下划线</span>
+        <span class="tag">明暗双主题（localStorage yx_theme_v5）</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  研学澄心 · 高保真原型 V5<br>
+  设计语言「晴空极简」：松石青 #0F766E · 无侧栏顶部通栏 · 大量留白 · 明暗双主题（点击顶栏月亮/太阳图标切换）<br>
+  演示区：晴川区 · 演示数据为虚构样本，资金数字仅作界面演示
+</footer>
+
+<script src="assets/proto.js"></script>
+</body>
+</html>

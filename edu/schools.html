@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学校列表管理 · 教育局管理端 · 研学澄心</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark" data-icon="logo"></span>
+      <span>
+        <span class="brand-name">研学澄心</span>
+        <span class="brand-sub" style="display:block">区县教育局管理端</span>
+      </span>
+    </a>
+    <nav class="nav-main">
+      <a class="nav-item" href="index.html">数据看板</a>
+      <a class="nav-item active" href="schools.html">学校管理</a>
+      <a class="nav-item" href="orgs.html">机构管理</a>
+      <a class="nav-item" href="routes.html">线路管理</a>
+      <a class="nav-item" href="approvals.html">活动审批</a>
+      <a class="nav-item" href="funds.html">资金分账</a>
+      <a class="nav-item" href="safety.html">安全应急</a>
+      <a class="nav-item" href="archive.html">研学档案</a>
+    </nav>
+    <div class="top-actions">
+      <div class="top-search"><span data-icon="search" data-size="14"></span><input placeholder="搜索学校 / 机构 / 活动…"></div>
+      <button class="icon-btn" data-theme-toggle data-theme-ic title="切换明暗主题"></button>
+      <button class="icon-btn" title="通知"><span data-icon="bell"></span><span class="badge-dot"></span></button>
+      <div class="user-chip">
+        <span class="avatar">周</span>
+        <span><span class="u-name" style="display:block">周科长</span><span class="u-role" style="display:block">晴川区教育局 · 科室审批员</span></span>
+        <span data-icon="chevD" data-size="13"></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="breadcrumb">
+    <a href="index.html">教育局管理端</a><span class="sep">/</span><span class="cur">学校管理</span>
+  </div>
+  <div class="page-head">
+    <div>
+      <h1 class="page-title">学校列表管理</h1>
+      <p class="page-sub">维护辖区内固定学校列表，用于家长身份校验与活动推送 · 共 8 所学校</p>
+    </div>
+    <div class="page-actions">
+      <button class="btn ghost" onclick="openImport()"><span data-icon="upload" data-size="13"></span>Excel 批量导入</button>
+      <button class="btn primary" onclick="openNewSchool()"><span data-icon="plus" data-size="13"></span>新增学校</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="toolbar" id="mainList">
+      <div class="search-box"><span data-icon="search" data-size="13"></span><input placeholder="搜索学校名称 / 编码 / 联系人" data-search data-scope="#mainList"></div>
+      <select class="select" style="width:130px" data-filter-select data-scope="#mainList">
+        <option value="all">全部学段</option>
+        <option value="xiao">小学</option>
+        <option value="chu">初中</option>
+        <option value="jiu">九年一贯制</option>
+      </select>
+      <span class="spacer"></span>
+      <span class="small muted">账号未开通的学校可由教育局一键开通</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>学校名称</th><th>学校编码</th><th>学段</th><th>地址</th><th>联系人</th><th>联系电话</th><th>账号状态</th><th style="text-align:right">操作</th></tr></thead>
+        <tbody>
+          <tr data-searchable data-filter="xiao">
+            <td class="t-main">晴川实验小学<div class="t-sub">6 个年级 · 42 个班级</div></td>
+            <td class="num">QCSY-001</td><td><span class="tag">小学</span></td>
+            <td>晴川区文华路 12 号</td><td>赵老师</td><td class="num">138****6621</td>
+            <td><span class="pill ok"><span class="dot"></span>已开通</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openGrades('晴川实验小学')">年级班级配置</button><button class="btn ghost sm" onclick="Toast('已进入编辑（演示）','ok')"><span data-icon="edit" data-size="12"></span>编辑</button></div></td>
+          </tr>
+          <tr data-searchable data-filter="xiao">
+            <td class="t-main">晴川第二小学<div class="t-sub">6 个年级 · 36 个班级</div></td>
+            <td class="num">QCEX-002</td><td><span class="tag">小学</span></td>
+            <td>晴川区新民街 3 号</td><td>钱老师</td><td class="num">139****7310</td>
+            <td><span class="pill ok"><span class="dot"></span>已开通</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openGrades('晴川第二小学')">年级班级配置</button><button class="btn ghost sm" onclick="Toast('已进入编辑（演示）','ok')"><span data-icon="edit" data-size="12"></span>编辑</button></div></td>
+          </tr>
+          <tr data-searchable data-filter="chu">
+            <td class="t-main">晴川第一中学<div class="t-sub">3 个年级 · 30 个班级</div></td>
+            <td class="num">QCYZ-003</td><td><span class="tag">初中</span></td>
+            <td>晴川区建设大道 88 号</td><td>孙老师</td><td class="num">137****2053</td>
+            <td><span class="pill ok"><span class="dot"></span>已开通</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openGrades('晴川第一中学')">年级班级配置</button><button class="btn ghost sm" onclick="Toast('已进入编辑（演示）','ok')"><span data-icon="edit" data-size="12"></span>编辑</button></div></td>
+          </tr>
+          <tr data-searchable data-filter="xiao">
+            <td class="t-main">晴川第三小学<div class="t-sub">6 个年级 · 30 个班级</div></td>
+            <td class="num">QCSX-004</td><td><span class="tag">小学</span></td>
+            <td>晴川区滨河路 56 号</td><td>李老师</td><td class="num">136****8842</td>
+            <td><span class="pill ok"><span class="dot"></span>已开通</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openGrades('晴川第三小学')">年级班级配置</button><button class="btn ghost sm" onclick="Toast('已进入编辑（演示）','ok')"><span data-icon="edit" data-size="12"></span>编辑</button></div></td>
+          </tr>
+          <tr data-searchable data-filter="jiu">
+            <td class="t-main">晴川外国语学校<div class="t-sub">9 个年级 · 45 个班级</div></td>
+            <td class="num">QCWY-005</td><td><span class="tag">九年一贯制</span></td>
+            <td>晴川区国际路 9 号</td><td>王老师</td><td class="num">158****3619</td>
+            <td><span class="pill ok"><span class="dot"></span>已开通</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openGrades('晴川外国语学校')">年级班级配置</button><button class="btn ghost sm" onclick="Toast('已进入编辑（演示）','ok')"><span data-icon="edit" data-size="12"></span>编辑</button></div></td>
+          </tr>
+          <tr data-searchable data-filter="xiao">
+            <td class="t-main">晴川镇中心小学<div class="t-sub">6 个年级 · 24 个班级</div></td>
+            <td class="num">QCZX-006</td><td><span class="tag">小学</span></td>
+            <td>晴川镇育才街 1 号</td><td>陈老师</td><td class="num">159****4027</td>
+            <td><span class="pill gray">未开通</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn primary sm" onclick="openAccount(this,'晴川镇中心小学')">一键开通账号</button><button class="btn ghost sm" onclick="openGrades('晴川镇中心小学')">年级班级配置</button></div></td>
+          </tr>
+          <tr data-searchable data-filter="xiao">
+            <td class="t-main">晴川新区小学<div class="t-sub">6 个年级 · 33 个班级</div></td>
+            <td class="num">QCXQ-007</td><td><span class="tag">小学</span></td>
+            <td>晴川区新城大道 22 号</td><td>刘老师</td><td class="num">151****9238</td>
+            <td><span class="pill ok"><span class="dot"></span>已开通</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openGrades('晴川新区小学')">年级班级配置</button><button class="btn ghost sm" onclick="Toast('已进入编辑（演示）','ok')"><span data-icon="edit" data-size="12"></span>编辑</button></div></td>
+          </tr>
+          <tr data-searchable data-filter="chu">
+            <td class="t-main">晴川实验中学<div class="t-sub">3 个年级 · 27 个班级</div></td>
+            <td class="num">QCSZ-008</td><td><span class="tag">初中</span></td>
+            <td>晴川区学府路 6 号</td><td>吴老师</td><td class="num">152****5714</td>
+            <td><span class="pill ok"><span class="dot"></span>已开通</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openGrades('晴川实验中学')">年级班级配置</button><button class="btn ghost sm" onclick="Toast('已进入编辑（演示）','ok')"><span data-icon="edit" data-size="12"></span>编辑</button></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pager">
+      <span>共 8 所学校 · 已开通 7 所 · 未开通 1 所</span>
+      <div class="pg-btns"><button class="pg-btn" disabled>&lt;</button><button class="pg-btn on">1</button><button class="pg-btn" disabled>&gt;</button></div>
+    </div>
+  </div>
+
+  <div class="banner brand mt-14"><span class="b-ic" data-icon="info" data-size="14"></span><div><b>账号说明：</b>每校仅设「学校管理员」角色；如需多人协同，教育局可为同一学校开通多个同权限管理员账号。学校不设带队教师角色，报名名单导出不含分组字段。</div></div>
+</main>
+
+<footer class="foot">
+  研学澄心 · 高保真原型 V5 · 设计语言「晴空极简」（松石青 / 无侧栏顶部通栏 / 明暗双主题）<br>
+  演示区：晴川区 · 演示数据为虚构样本
+</footer>
+
+<script src="../assets/proto.js"></script>
+<script>
+function openAccount(btn, name) {
+  openModal(`
+    <div class="modal-head"><div class="modal-title">一键开通学校管理员账号</div><button class="icon-btn" data-close><span data-icon="x" data-size="14"></span></button></div>
+    <div class="modal-body">
+      <div class="banner info mb-12"><span class="b-ic" data-icon="info" data-size="14"></span><div>将为 <b>${name}</b> 开通学校管理员账号，初始密码将通过短信发送至学校联系人手机。</div></div>
+      <div class="form-grid">
+        <div class="field"><div class="label">学校名称</div><input class="input" value="${name}" disabled></div>
+        <div class="field"><div class="label">管理员姓名</div><input class="input" value="陈老师"></div>
+        <div class="field"><div class="label">管理员手机号</div><input class="input" value="159****4027"></div>
+        <div class="field"><div class="label">账号数量 <span class="muted small">（可多人协同，权限相同）</span></div><input class="input num" value="1"></div>
+      </div>
+    </div>
+    <div class="modal-foot"><button class="btn ghost" data-close>取消</button><button class="btn primary" onclick="Toast('${name} 管理员账号已开通','ok');closeOverlay(document.querySelector('.overlay-mask'))"><span data-icon="check" data-size="13"></span>确认开通</button></div>`);
+}
+function openGrades(name) {
+  const mask = openDrawer(`
+    <div class="drawer-head"><div><div class="card-title" style="font-size:15px">年级班级配置</div><div class="small muted">${name} · 用于家长身份校验与活动推送</div></div><button class="icon-btn" data-close><span data-icon="x" data-size="14"></span></button></div>
+    <div class="drawer-body">
+      <div class="field"><div class="label">年级</div><select class="select"><option>三年级</option><option>一年级</option><option>二年级</option><option>四年级</option><option>五年级</option><option>六年级</option></select></div>
+      <div class="field"><div class="label">班级列表 <span class="muted small">（勾选为有效班级）</span></div>
+        <div class="checks">
+          <span class="check-pill on">1班</span><span class="check-pill on">2班</span><span class="check-pill on">3班</span><span class="check-pill on">4班</span><span class="check-pill on">5班</span><span class="check-pill">6班</span><span class="check-pill">7班</span>
+        </div>
+      </div>
+      <div class="banner gray"><span class="b-ic" data-icon="info" data-size="14"></span><div>当前共 <b>5</b> 个班级 · 在籍学生 <b>212</b> 人。班级信息变更后，报名推送范围与家长身份校验同步更新。</div></div>
+      <div class="sec-head mt-16">已配置年级</div>
+      <div class="rank-list" style="border:1px solid var(--line);border-radius:8px">
+        <li><span class="rk-name">一年级</span><span class="small muted">6 班 · 254 人</span></li>
+        <li><span class="rk-name">二年级</span><span class="small muted">6 班 · 248 人</span></li>
+        <li><span class="rk-name">三年级</span><span class="small muted">5 班 · 212 人</span></li>
+        <li><span class="rk-name">四年级</span><span class="small muted">6 班 · 239 人</span></li>
+        <li><span class="rk-name">五年级</span><span class="small muted">5 班 · 205 人</span></li>
+        <li><span class="rk-name">六年级</span><span class="small muted">5 班 · 198 人</span></li>
+      </div>
+    </div>
+    <div class="drawer-foot"><button class="btn ghost" data-close>取消</button><button class="btn primary" onclick="Toast('年级班级配置已保存','ok');closeOverlay(document.querySelector('.drawer-mask'))">保存配置</button></div>`);
+}
+function openImport() {
+  openModal(`
+    <div class="modal-head"><div class="modal-title">Excel 批量导入学校</div><button class="icon-btn" data-close><span data-icon="x" data-size="14"></span></button></div>
+    <div class="modal-body">
+      <div class="banner gray mb-12"><span class="b-ic" data-icon="info" data-size="14"></span><div>下载标准模板，填写学校名称、编码、学段、地址、联系人、电话后上传。导入前系统自动校验编码唯一性与格式。</div></div>
+      <div class="upload-box mb-12" onclick="Toast('已选择文件：晴川区学校名单.xlsx','ok')"><span data-icon="upload" data-size="18" style="display:block;margin:0 auto 6px"></span>点击选择 .xlsx 文件，或拖拽至此</div>
+      <div class="file-row"><span class="f-ic" data-icon="excel"></span><div><div class="f-name">学校导入模板.xlsx</div><div class="f-meta">含示例数据 · 12 KB</div></div><span class="f-spacer"></span><button class="btn ghost sm"><span data-icon="download" data-size="12"></span>下载模板</button></div>
+    </div>
+    <div class="modal-foot"><button class="btn ghost" data-close>取消</button><button class="btn primary" onclick="Toast('导入完成：新增 2 所，更新 1 所，失败 0 条','ok');closeOverlay(document.querySelector('.overlay-mask'))">开始导入</button></div>`);
+}
+function openNewSchool() {
+  openModal(`
+    <div class="modal-head"><div class="modal-title">新增学校</div><button class="icon-btn" data-close><span data-icon="x" data-size="14"></span></button></div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="field"><div class="label"><span class="req">*</span>学校名称</div><input class="input" placeholder="如：晴川第九小学"></div>
+        <div class="field"><div class="label"><span class="req">*</span>学校编码</div><input class="input" placeholder="如：QCDX-009"></div>
+        <div class="field"><div class="label"><span class="req">*</span>学段</div><select class="select"><option>小学</option><option>初中</option><option>九年一贯制</option></select></div>
+        <div class="field"><div class="label">地址</div><input class="input" placeholder="所在街道与门牌号"></div>
+        <div class="field"><div class="label">联系人</div><input class="input" placeholder="学校联系人姓名"></div>
+        <div class="field"><div class="label">联系电话</div><input class="input" placeholder="手机号"></div>
+      </div>
+    </div>
+    <div class="modal-foot"><button class="btn ghost" data-close>取消</button><button class="btn primary" onclick="Toast('学校已新增，可继续配置年级班级或一键开通账号','ok');closeOverlay(document.querySelector('.overlay-mask'))">保存</button></div>`);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生研学档案 · 教育局管理端 · 研学澄心</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark" data-icon="logo"></span>
+      <span>
+        <span class="brand-name">研学澄心</span>
+        <span class="brand-sub" style="display:block">区县教育局管理端</span>
+      </span>
+    </a>
+    <nav class="nav-main">
+      <a class="nav-item" href="index.html">数据看板</a>
+      <a class="nav-item" href="schools.html">学校管理</a>
+      <a class="nav-item" href="orgs.html">机构管理</a>
+      <a class="nav-item" href="routes.html">线路管理</a>
+      <a class="nav-item" href="approvals.html">活动审批</a>
+      <a class="nav-item" href="funds.html">资金分账</a>
+      <a class="nav-item" href="safety.html">安全应急</a>
+      <a class="nav-item active" href="archive.html">研学档案</a>
+    </nav>
+    <div class="top-actions">
+      <div class="top-search"><span data-icon="search" data-size="14"></span><input placeholder="搜索学校 / 机构 / 活动…"></div>
+      <button class="icon-btn" data-theme-toggle data-theme-ic title="切换明暗主题"></button>
+      <button class="icon-btn" title="通知"><span data-icon="bell"></span><span class="badge-dot"></span></button>
+      <div class="user-chip">
+        <span class="avatar">周</span>
+        <span><span class="u-name" style="display:block">周科长</span><span class="u-role" style="display:block">晴川区教育局 · 科室审批员</span></span>
+        <span data-icon="chevD" data-size="13"></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="breadcrumb">
+    <a href="index.html">教育局管理端</a><span class="sep">/</span><span class="cur">学生研学档案</span>
+  </div>
+  <div class="page-head">
+    <div>
+      <h1 class="page-title">学生研学档案（全局）</h1>
+      <p class="page-sub">按姓名 / 学籍号查询个人档案（历次活动、报告、证书、评价）· 参与率按学校 / 年级统计 · 支持批量导出</p>
+    </div>
+    <div class="page-actions">
+      <button class="btn ghost" onclick="Toast('已导出全区档案汇总.xlsx（脱敏）','ok')"><span data-icon="download" data-size="13"></span>批量导出</button>
+    </div>
+  </div>
+
+  <div class="card mb-16">
+    <div class="card-head"><div><div class="card-title">全区参与率（按学校）</div><div class="card-sub">2026 年度 · 参与人次 / 在籍学生数</div></div></div>
+    <div class="card-pad">
+      <div class="chart-box" id="chSchool"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="toolbar" id="mainList">
+      <div class="search-box" style="width:300px"><span data-icon="search" data-size="13"></span><input placeholder="输入姓名 / 学籍号搜索学生档案" data-search data-scope="#mainList"></div>
+      <select class="select" style="width:140px" data-filter-select="fschool" data-scope="#mainList">
+        <option value="all">全部学校</option><option value="s1">晴川实验小学</option><option value="s2">晴川第二小学</option><option value="s3">晴川第一中学</option><option value="s4">晴川第三小学</option><option value="s5">晴川外国语学校</option><option value="s6">晴川实验中学</option>
+      </select>
+      <select class="select" style="width:120px" data-filter-select="fgrade" data-scope="#mainList">
+        <option value="all">全部年级</option><option value="g12">1-2 年级</option><option value="g34">3-4 年级</option><option value="g56">5-6 年级</option><option value="g79">7-9 年级</option>
+      </select>
+      <span class="spacer"></span>
+      <span class="small muted">学生信息脱敏展示 · 完整信息仅授权账号可见</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>学生姓名</th><th>学籍号</th><th>学校</th><th>年级班级</th><th>累计研学</th><th>累计学时</th><th>档案完整度</th><th style="text-align:right">操作</th></tr></thead>
+        <tbody>
+          <tr data-searchable data-fschool="s1" data-fgrade="g34">
+            <td class="t-main">苏小禾<div class="t-sub">女 · 2017-03 生</div></td><td class="num mono">QCSY202300218</td>
+            <td>晴川实验小学</td><td>三年级 2 班</td><td class="num">3 次</td><td class="num">24 学时</td>
+            <td><div class="prog" style="width:120px"><i style="width:100%"></i></div></td>
+            <td class="t-right"><button class="btn ghost sm" onclick="openArchive('苏小禾')">个人档案</button></td>
+          </tr>
+          <tr data-searchable data-fschool="s1" data-fgrade="g34">
+            <td class="t-main">陈嘉树<div class="t-sub">男 · 2017-06 生</div></td><td class="num mono">QCSY202300105</td>
+            <td>晴川实验小学</td><td>三年级 2 班</td><td class="num">3 次</td><td class="num">24 学时</td>
+            <td><div class="prog" style="width:120px"><i style="width:100%"></i></div></td>
+            <td class="t-right"><button class="btn ghost sm" onclick="openArchive('陈嘉树')">个人档案</button></td>
+          </tr>
+          <tr data-searchable data-fschool="s2" data-fgrade="g79">
+            <td class="t-main">周若溪<div class="t-sub">女 · 2012-11 生</div></td><td class="num mono">QCEX202100306</td>
+            <td>晴川第二小学</td><td>五年级 3 班</td><td class="num">4 次</td><td class="num">40 学时</td>
+            <td><div class="prog" style="width:120px"><i style="width:100%"></i></div></td>
+            <td class="t-right"><button class="btn ghost sm" onclick="openArchive('周若溪')">个人档案</button></td>
+          </tr>
+          <tr data-searchable data-fschool="s3" data-fgrade="g79">
+            <td class="t-main">王雨桐<div class="t-sub">女 · 2013-01 生</div></td><td class="num mono">QCYZ202400218</td>
+            <td>晴川第一中学</td><td>八年级 2 班</td><td class="num">5 次</td><td class="num">52 学时</td>
+            <td><div class="prog" style="width:120px"><i style="width:90%"></i></div></td>
+            <td class="t-right"><button class="btn ghost sm" onclick="openArchive('王雨桐')">个人档案</button></td>
+          </tr>
+          <tr data-searchable data-fschool="s4" data-fgrade="g12">
+            <td class="t-main">刘子墨<div class="t-sub">男 · 2018-09 生</div></td><td class="num mono">QCSX202200407</td>
+            <td>晴川第三小学</td><td>二年级 4 班</td><td class="num">2 次</td><td class="num">16 学时</td>
+            <td><div class="prog" style="width:120px"><i style="width:100%"></i></div></td>
+            <td class="t-right"><button class="btn ghost sm" onclick="openArchive('刘子墨')">个人档案</button></td>
+          </tr>
+          <tr data-searchable data-fschool="s6" data-fgrade="g56">
+            <td class="t-main">张一诺<div class="t-sub">男 · 2014-05 生</div></td><td class="num mono">QCSZ202300116</td>
+            <td>晴川实验中学</td><td>六年级 1 班</td><td class="num">4 次</td><td class="num">38 学时</td>
+            <td><div class="prog" style="width:120px"><i style="width:85%"></i></div></td>
+            <td class="t-right"><button class="btn ghost sm" onclick="openArchive('张一诺')">个人档案</button></td>
+          </tr>
+          <tr data-searchable data-fschool="s6" data-fgrade="g56">
+            <td class="t-main">林小满<div class="t-sub">女 · 2014-02 生</div></td><td class="num mono">QCSZ202300128</td>
+            <td>晴川实验中学</td><td>六年级 1 班</td><td class="num">4 次</td><td class="num">38 学时</td>
+            <td><div class="prog" style="width:120px"><i style="width:100%"></i></div></td>
+            <td class="t-right"><button class="btn ghost sm" onclick="openArchive('林小满')">个人档案</button></td>
+          </tr>
+          <tr data-searchable data-fschool="s1" data-fgrade="g34">
+            <td class="t-main">黄诗涵<div class="t-sub">女 · 2017-08 生</div></td><td class="num mono">QCSY202300314</td>
+            <td>晴川实验小学</td><td>三年级 5 班</td><td class="num">2 次</td><td class="num">16 学时</td>
+            <td><div class="prog" style="width:120px"><i style="width:75%"></i></div></td>
+            <td class="t-right"><button class="btn ghost sm" onclick="openArchive('黄诗涵')">个人档案</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pager"><span>全区建档学生 12,846 名 · 档案自动沉淀：报告 / 证书 / 评价 / 学时</span><div class="pg-btns"><button class="pg-btn" disabled>&lt;</button><button class="pg-btn on">1</button><button class="pg-btn">2</button><button class="pg-btn">&gt;</button></div></div>
+  </div>
+</main>
+
+<footer class="foot">
+  研学澄心 · 高保真原型 V5 · 设计语言「晴空极简」（松石青 / 无侧栏顶部通栏 / 明暗双主题）<br>
+  演示区：晴川区 · 演示数据为虚构样本
+</footer>
+
+<script src="../assets/proto.js"></script>
+<script>
+barChart($('#chSchool'), {
+  height: 200,
+  data: [
+    { label: '晴川实验小学', value: 96.4 },
+    { label: '晴川第二小学', value: 91.2 },
+    { label: '晴川第一中学', value: 88.7 },
+    { label: '晴川第三小学', value: 93.5 },
+    { label: '晴川外国语学校', value: 85.9 },
+    { label: '晴川镇中心小学', value: 89.4 },
+    { label: '晴川新区小学', value: 92.8 },
+    { label: '晴川实验中学', value: 90.6 }
+  ],
+  fmt: v => v + '%', unit: '%', color: 'var(--brand)'
+});
+function openArchive(name) {
+  openDrawer(`
+    <div class="drawer-head"><div><div class="card-title" style="font-size:15px">${name} · 研学档案</div><div class="small muted">学籍号 QCSY202300218 · 晴川实验小学 三年级 2 班</div></div><button class="icon-btn" data-close><span data-icon="x" data-size="14"></span></button></div>
+    <div class="drawer-body">
+      <div class="stat-strip mb-16">
+        <div class="ss-item"><div class="ss-val">3</div><div class="ss-label">累计研学次数</div></div>
+        <div class="ss-item"><div class="ss-val">24</div><div class="ss-label">累计学时</div></div>
+        <div class="ss-item"><div class="ss-val">4.9</div><div class="ss-label">平均表现评价</div></div>
+      </div>
+      <div class="sec-head">历次研学时间线</div>
+      <ul class="timeline">
+        <li class="done"><div class="tl-title">湿地生态研学营 <span class="pill brand">已报名</span><span class="tl-time">2026-10-17</span></div><div class="tl-body">启程研学教育承办 · 自然生态 · 待出行</div></li>
+        <li class="done"><div class="tl-title">田野农耕体验 <span class="tl-time">2026-08-30</span></div><div class="tl-body">山海行知研学承办 · 劳动实践 · 报告与证书已归档</div></li>
+        <li class="done"><div class="tl-title">植物园春日研学 <span class="tl-time">2026-05-09</span></div><div class="tl-body">启程研学教育承办 · 自然生态 · 报告与证书已归档</div></li>
+      </ul>
+      <div class="sec-head mt-16">档案材料</div>
+      <div class="file-row"><span class="f-ic" data-icon="doc"></span><div><div class="f-name">田野农耕体验 · 研学报告.pdf</div><div class="f-meta">学校评价：表现优秀 · 生成 2026-09-02</div></div><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('报告.pdf 已下载','ok')"><span data-icon="download" data-size="12"></span>下载</button></div>
+      <div class="file-row"><span class="f-ic" data-icon="cert"></span><div><div class="f-name">田野农耕体验 · 研学证书.pdf</div><div class="f-meta">含学时认定 · 可分享</div></div><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('证书.pdf 已下载','ok')"><span data-icon="download" data-size="12"></span>下载</button></div>
+      <div class="file-row"><span class="f-ic" data-icon="star"></span><div><div class="f-name">家长评价记录</div><div class="f-meta">满意度 5 星 · 课程质量 5 / 安全保障 5 / 导师服务 4.5</div></div><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('已打开评价详情（演示）','ok')"><span data-icon="eye" data-size="12"></span>查看</button></div>
+    </div>
+    <div class="drawer-foot"><button class="btn ghost" data-close>关闭</button><button class="btn primary" onclick="Toast('个人档案.pdf 已导出','ok')"><span data-icon="download" data-size="13"></span>导出档案</button></div>`);
+}
+</script>
+</body>
+</html>

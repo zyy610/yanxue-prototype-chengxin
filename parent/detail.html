@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>活动详情 · 研学澄心 · 家长小程序</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<main class="phone-stage">
+  <button class="icon-btn" data-theme-toggle data-theme-ic title="切换明暗主题" style="position:fixed;top:16px;right:16px;background:var(--card);border:1px solid var(--line)"></button>
+  <div class="phone">
+    <div class="phone-notch"></div>
+    <div class="phone-screen">
+      <div class="p-status"><span>9:41</span><span style="letter-spacing:1px">活动详情</span><span>晴川区</span></div>
+      <div class="p-head">
+        <button class="icon-btn" onclick="history.back()"><span data-icon="back" data-size="16"></span></button>
+        <div class="p-title">活动详情</div>
+        <span data-icon="more" data-size="16" style="color:var(--ink-2)"></span>
+      </div>
+      <div class="p-body">
+        <div class="p-act-img" style="height:170px;border-radius:12px" data-icon="leaf" data-size="56"></div>
+
+        <div class="p-sec-title" style="margin-top:14px">湿地生态研学营</div>
+        <div class="flex items-center gap-8" style="flex-wrap:wrap">
+          <span class="pill brand"><span class="dot"></span>报名中</span>
+          <span class="pill ok">启程研学教育 · 信用 A</span>
+          <span class="tag">已承办 12 场 · 家长评分 4.9</span>
+        </div>
+
+        <div class="p-card mt-12">
+          <div class="flex items-center gap-10" style="padding:2px 0 8px"><span data-icon="calendar" data-size="14" style="color:var(--brand)"></span><div><div class="strong">2026-10-17（周六）</div><div class="small muted">1 天 · 08:00 学校集合出发 · 16:00 返程</div></div></div>
+          <div class="flex items-center gap-10" style="padding:2px 0 8px"><span data-icon="pin" data-size="14" style="color:var(--brand)"></span><div><div class="strong">晴川湿地公园</div><div class="small muted">晴川实验小学统一大巴往返 · 含午餐</div></div></div>
+          <div class="flex items-center gap-10" style="padding:2px 0"><span data-icon="users" data-size="14" style="color:var(--brand)"></span><div><div class="strong">三年级 2 班 / 5 班</div><div class="small muted">已报名 86/96 · 候补 14 人 · 剩余 10 个名额</div></div></div>
+        </div>
+
+        <div class="p-sec-title">行程安排</div>
+        <div class="p-card">
+          <ul class="timeline" style="padding-left:0">
+            <li class="done"><div class="tl-title">08:00 集合出发</div></li>
+            <li class="done"><div class="tl-title">09:00 开营与安全教育</div></li>
+            <li class="done"><div class="tl-title">09:30 湿地生态观察 · 鸟类辨识</div></li>
+            <li class="done"><div class="tl-title">11:30 午餐（含餐 · 过敏原单独供应）</div></li>
+            <li class="done"><div class="tl-title">13:00 湿地水质检测实验</div></li>
+            <li class="done"><div class="tl-title">15:00 生态笔记总结 · 结营</div></li>
+            <li class="done"><div class="tl-title">16:00 返程到校</div></li>
+          </ul>
+        </div>
+
+        <div class="p-sec-title">费用说明</div>
+        <div class="p-card">
+          <div class="flex justify-between items-center" style="padding:4px 0"><span>活动费用</span><span class="p-price">¥328.00/人</span></div>
+          <hr class="hr">
+          <div class="small muted" style="line-height:1.7">费用包含：交通、门票、课程、导师、午餐、保险（每人保额 50 万）。<b>平台服务费由机构承担，不向家长额外收取。</b></div>
+        </div>
+
+        <div class="p-sec-title">资金安全承诺</div>
+        <div class="p-card" style="border-color:var(--brand);background:var(--brand-tint)">
+          <div class="flex gap-10" style="align-items:flex-start">
+            <span data-icon="shield" data-size="16" style="color:var(--brand);flex:0 0 auto;margin-top:3px"></span>
+            <div class="small" style="line-height:1.8"><b class="brand-ink">本平台交易资金由持牌支付机构全程存管，活动结束后自动合规分账。</b><br><span class="muted">您的每一笔支付均进入支付机构备付金存管账户，平台不触碰资金；活动结束且无争议期届满后，系统自动将 98% 划转机构、2% 划转平台，全程无需人工干预。</span></div>
+          </div>
+        </div>
+
+        <div class="p-sec-title">安全须知</div>
+        <div class="p-card small muted" style="line-height:1.8">
+          1. 学生需身体健康，特殊需求（过敏史、饮食禁忌、慢性病）请在报名时如实填写；<br>
+          2. 活动配备随行医护包与急救员，导师配比 1:15；<br>
+          3. 紧急联系人将用于活动期间紧急联络，请确保电话畅通。
+        </div>
+      </div>
+      <div class="p-body" style="flex:0 0 auto;padding-bottom:20px">
+        <button class="p-btn" onclick="location.href='signup.html'">立即报名 · ¥328</button>
+        <div class="small muted mt-8" style="text-align:center">剩余名额 10 · 满员后自动进入候补队列</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div style="position:fixed;bottom:14px;left:0;right:0;text-align:center;font-size:11px;color:var(--ink-3)">
+  研学澄心 · 家长报名支付端（微信小程序 · 手机演示）· 设计语言「晴空极简」· 演示数据为虚构样本
+</div>
+
+<script src="../assets/proto.js"></script>
+</body>
+</html>

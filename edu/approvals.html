@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>活动审批 · 教育局管理端 · 研学澄心</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark" data-icon="logo"></span>
+      <span>
+        <span class="brand-name">研学澄心</span>
+        <span class="brand-sub" style="display:block">区县教育局管理端</span>
+      </span>
+    </a>
+    <nav class="nav-main">
+      <a class="nav-item" href="index.html">数据看板</a>
+      <a class="nav-item" href="schools.html">学校管理</a>
+      <a class="nav-item" href="orgs.html">机构管理</a>
+      <a class="nav-item" href="routes.html">线路管理</a>
+      <a class="nav-item active" href="approvals.html">活动审批</a>
+      <a class="nav-item" href="funds.html">资金分账</a>
+      <a class="nav-item" href="safety.html">安全应急</a>
+      <a class="nav-item" href="archive.html">研学档案</a>
+    </nav>
+    <div class="top-actions">
+      <div class="top-search"><span data-icon="search" data-size="14"></span><input placeholder="搜索学校 / 机构 / 活动…"></div>
+      <button class="icon-btn" data-theme-toggle data-theme-ic title="切换明暗主题"></button>
+      <button class="icon-btn" title="通知"><span data-icon="bell"></span><span class="badge-dot"></span></button>
+      <div class="user-chip">
+        <span class="avatar">周</span>
+        <span><span class="u-name" style="display:block">周科长</span><span class="u-role" style="display:block">晴川区教育局 · 科室审批员</span></span>
+        <span data-icon="chevD" data-size="13"></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="breadcrumb">
+    <a href="index.html">教育局管理端</a><span class="sep">/</span><span class="cur">活动审批</span>
+  </div>
+  <div class="page-head">
+    <div>
+      <h1 class="page-title">活动审批（两级）</h1>
+      <p class="page-sub">科室审批 → 局领导终审 · 科室超 3 个工作日 / 终审超 2 个工作日自动提醒 · 审批记录完整可追溯</p>
+    </div>
+    <div class="page-actions">
+      <span class="pill bad" style="height:26px">超时提醒 1 单</span>
+    </div>
+  </div>
+
+  <div data-tabs>
+    <div class="tabs">
+      <span class="tab on">待科室审批 <span class="cnt">2</span></span>
+      <span class="tab">待局领导终审 <span class="cnt">2</span></span>
+      <span class="tab">已办结</span>
+    </div>
+
+    <div class="tab-pane on">
+      <div class="card">
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead><tr><th>活动编号</th><th>活动名称</th><th>申报学校</th><th>承办机构</th><th>活动日期</th><th>人数规模</th><th>收费</th><th>审批时限</th><th style="text-align:right">操作</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="num">ACT-2026-115</td>
+                <td class="t-main">茶园采茶劳动实践<div class="t-sub">线路：青禾研学 · 茶园采茶劳动实践（已备案）</div></td>
+                <td>晴川第二小学</td><td>青禾研学</td><td>2026-10-24</td><td class="num">108 人</td><td class="num">¥218/人</td>
+                <td><span class="pill gray">1 个工作日</span></td>
+                <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn primary sm" onclick="openDept('茶园采茶劳动实践','晴川第二小学','青禾研学')">审批详情</button></div></td>
+              </tr>
+              <tr>
+                <td class="num">ACT-2026-114</td>
+                <td class="t-main">星空帐篷之夜<div class="t-sub">线路：松果少年营地 · 星空帐篷之夜（已备案）</div></td>
+                <td>晴川外国语学校</td><td>松果少年营地</td><td>2026-11-07</td><td class="num">96 人</td><td class="num">¥498/人</td>
+                <td><span class="pill gray">2 个工作日</span></td>
+                <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn primary sm" onclick="openDept('星空帐篷之夜','晴川外国语学校','松果少年营地')">审批详情</button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pager"><span>科室审批时限 3 个工作日 · 超时自动发送提醒</span><div class="pg-btns"><button class="pg-btn" disabled>&lt;</button><button class="pg-btn on">1</button><button class="pg-btn" disabled>&gt;</button></div></div>
+      </div>
+    </div>
+
+    <div class="tab-pane">
+      <div class="card">
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead><tr><th>活动编号</th><th>活动名称</th><th>申报学校</th><th>承办机构</th><th>活动日期</th><th>人数规模</th><th>科室意见</th><th>终审时限</th><th style="text-align:right">操作</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="num">ACT-2026-108</td>
+                <td class="t-main">博物馆里的历史课<div class="t-sub">线路：山海行知研学 · 博物馆里的历史课（已备案）</div></td>
+                <td>晴川第一中学</td><td>山海行知研学</td><td>2026-09-26</td><td class="num">186 人</td>
+                <td class="small muted">材料齐全，符合规范，建议通过</td>
+                <td><span class="overdue-mark"><span data-icon="clock" data-size="11"></span>已 4 个工作日 · 超时</span></td>
+                <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn primary sm" onclick="openFinal('博物馆里的历史课','晴川第一中学','山海行知研学',true)">终审详情</button></div></td>
+              </tr>
+              <tr>
+                <td class="num">ACT-2026-113</td>
+                <td class="t-main">古镇非遗寻访<div class="t-sub">线路：星河研学旅行 · 古镇非遗寻访（已备案）</div></td>
+                <td>晴川实验小学</td><td>星河研学旅行</td><td>2026-10-30</td><td class="num">142 人</td>
+                <td class="small muted">线路合规，安全预案完整，建议通过</td>
+                <td><span class="pill gray">2 个工作日</span></td>
+                <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn primary sm" onclick="openFinal('古镇非遗寻访','晴川实验小学','星河研学旅行',false)">终审详情</button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pager"><span>局领导终审时限 2 个工作日 · 超时自动发送提醒</span><div class="pg-btns"><button class="pg-btn" disabled>&lt;</button><button class="pg-btn on">1</button><button class="pg-btn" disabled>&gt;</button></div></div>
+      </div>
+    </div>
+
+    <div class="tab-pane">
+      <div class="card">
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead><tr><th>活动编号</th><th>活动名称</th><th>申报学校</th><th>承办机构</th><th>活动日期</th><th>审批结果</th><th>终审时间</th><th style="text-align:right">操作</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="num">ACT-2026-112</td><td class="t-main">湿地生态研学营<div class="t-sub">线路：启程研学教育 · 湿地生态研学营（已备案）</div></td>
+                <td>晴川实验小学</td><td>启程研学教育</td><td>2026-10-17</td>
+                <td><span class="pill ok"><span class="dot"></span>两级通过</span></td><td>2026-09-04 16:20</td>
+                <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openRecord('湿地生态研学营')">查看审批记录</button></div></td>
+              </tr>
+              <tr>
+                <td class="num">ACT-2026-110</td><td class="t-main">城市工业研学<div class="t-sub">线路：笃行研学 · 城市工业研学（已驳回备案）</div></td>
+                <td>晴川实验中学</td><td>笃行研学</td><td>2026-09-15</td>
+                <td><span class="pill bad"><span class="dot"></span>退回补正</span></td><td>2026-09-05 10:12</td>
+                <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openRecord('城市工业研学')">查看审批记录</button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pager"><span>审批记录完整留存 · 支持按活动 / 学校 / 时间追溯</span><div class="pg-btns"><button class="pg-btn" disabled>&lt;</button><button class="pg-btn on">1</button><button class="pg-btn" disabled>&gt;</button></div></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  研学澄心 · 高保真原型 V5 · 设计语言「晴空极简」（松石青 / 无侧栏顶部通栏 / 明暗双主题）<br>
+  演示区：晴川区 · 演示数据为虚构样本
+</footer>
+
+<script src="../assets/proto.js"></script>
+<script>
+function flowHtml(step) {
+  const d1 = step >= 1, d2 = step >= 2;
+  return `<div class="flow" style="margin:4px 0 18px">
+    <div class="flow-node ${d1 ? 'done' : 'cur'}"><span class="f-dot">${d1 ? I('check', 14) : I('user', 14)}</span><span class="f-label">科室审批</span><span class="f-sub">周科长 · 已通过</span></div>
+    <div class="flow-line ${d1 ? 'done' : ''}"></div>
+    <div class="flow-node ${d2 ? 'done' : 'cur'}"><span class="f-dot">${d2 ? I('check', 14) : I('cert', 14)}</span><span class="f-label">局领导终审</span><span class="f-sub">${d2 ? '沈副局长 · 已通过' : '待处理'}</span></div>
+  </div>`;
+}
+function openDept(name, school, org) {
+  openDrawer(`
+    <div class="drawer-head"><div><div class="card-title" style="font-size:15px">科室审批 · ${name}</div><div class="small muted">${school} 申报 · ${org} 承办</div></div><button class="icon-btn" data-close><span data-icon="x" data-size="14"></span></button></div>
+    <div class="drawer-body">
+      ${flowHtml(0)}
+      <div class="sec-head">活动信息</div>
+      <div class="kv">
+        <div class="kv-item"><span class="k">活动日期</span><span class="v">2026-10-24（1 天）</span></div>
+        <div class="kv-item"><span class="k">推送范围</span><span class="v">四年级 3 班 / 4 班</span></div>
+        <div class="kv-item"><span class="k">预计人数</span><span class="v">108 人 · 上限 120 人</span></div>
+        <div class="kv-item"><span class="k">收费</span><span class="v money">¥218/人</span></div>
+      </div>
+      <div class="sec-head mt-16">线路核查</div>
+      <div class="banner brand"><span class="b-ic" data-icon="checkCircle" data-size="14"></span><div>所选线路「${org} · ${name}」为已备案线路，备案主体与承办机构一致，合规。</div></div>
+      <div class="sec-head mt-16">安全预案</div>
+      <div class="file-row"><span class="f-ic" data-icon="doc"></span><div><div class="f-name">安全预案.pdf</div><div class="f-meta">交通 / 餐饮 / 医疗应急 · 保险方案随附</div></div><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('已打开文件预览（演示）','ok')"><span data-icon="eye" data-size="12"></span>预览</button></div>
+      <div class="field mt-16"><div class="label">审批意见</div><textarea class="textarea" placeholder="填写审批意见（退回补正时必填）"></textarea></div>
+    </div>
+    <div class="drawer-foot"><button class="btn danger" onclick="Toast('已退回学校补正，学校可修改后重新提交','warn');closeOverlay(document.querySelector('.drawer-mask'))">退回补正</button><button class="btn primary" onclick="Toast('科室审批通过，已流转至局领导终审','ok');closeOverlay(document.querySelector('.drawer-mask'))"><span data-icon="check" data-size="13"></span>科室通过</button></div>`);
+}
+function openFinal(name, school, org, overdue) {
+  openDrawer(`
+    <div class="drawer-head"><div><div class="card-title" style="font-size:15px">局领导终审 · ${name}</div><div class="small muted">${school} 申报 · ${org} 承办</div></div><button class="icon-btn" data-close><span data-icon="x" data-size="14"></span></button></div>
+    <div class="drawer-body">
+      ${flowHtml(1)}
+      ${overdue ? '<div class="banner warn mb-12"><span class="b-ic" data-icon="clock" data-size="14"></span><div>终审已等待 <b>4 个工作日</b>，超过 2 个工作日时限，系统已自动向局领导发送超时提醒。</div></div>' : ''}
+      <div class="sec-head">活动信息</div>
+      <div class="kv">
+        <div class="kv-item"><span class="k">活动日期</span><span class="v">2026-09-26（半天）</span></div>
+        <div class="kv-item"><span class="k">推送范围</span><span class="v">八年级 1-4 班</span></div>
+        <div class="kv-item"><span class="k">预计人数</span><span class="v">186 人 · 上限 200 人</span></div>
+        <div class="kv-item"><span class="k">收费</span><span class="v money">¥128/人</span></div>
+      </div>
+      <div class="sec-head mt-16">审批意见流</div>
+      <div class="opinion-item">
+        <span class="op-avatar">周</span>
+        <div><div class="op-name">周科长（科室审批员）<span class="pill ok">科室通过</span></div><div class="op-time">2026-09-08 15:20</div><div class="op-text">活动时间与教学安排无冲突，线路合规，人数规模与收费符合规定，安全预案完整。同意报局领导终审。</div></div>
+      </div>
+      <div class="opinion-item">
+        <span class="op-avatar" style="background:var(--info-soft);color:var(--info)">沈</span>
+        <div><div class="op-name">沈副局长（局领导）<span class="pill warn">待处理</span></div><div class="op-time">—</div><div class="op-text muted">等待终审意见…</div></div>
+      </div>
+      <div class="field mt-16"><div class="label">终审意见</div><textarea class="textarea" placeholder="填写终审意见"></textarea></div>
+    </div>
+    <div class="drawer-foot"><button class="btn danger" onclick="Toast('已退回科室复核','warn');closeOverlay(document.querySelector('.drawer-mask'))">退回</button><button class="btn primary" onclick="Toast('终审通过，报名入口已自动推送至家长端','ok');closeOverlay(document.querySelector('.drawer-mask'))"><span data-icon="check" data-size="13"></span>终审通过</button></div>`);
+}
+function openRecord(name) {
+  openDrawer(`
+    <div class="drawer-head"><div><div class="card-title" style="font-size:15px">审批记录 · ${name}</div><div class="small muted">完整审批时间线 · 可追溯</div></div><button class="icon-btn" data-close><span data-icon="x" data-size="14"></span></button></div>
+    <div class="drawer-body">
+      <ul class="timeline">
+        <li class="done"><div class="tl-title">学校提交申报 <span class="tl-time">2026-09-02 09:41</span></div><div class="tl-body">晴川实验小学 · 赵老师 · 从线路库勾选「启程研学教育 · 湿地生态研学营」</div></li>
+        <li class="done"><div class="tl-title">科室审批通过 <span class="tl-time">2026-09-03 14:05</span></div><div class="tl-body">周科长 · 意见：线路合规，人数与收费符合规定，安全预案完整。</div></li>
+        <li class="done"><div class="tl-title">局领导终审通过 <span class="tl-time">2026-09-04 16:20</span></div><div class="tl-body">沈副局长 · 意见：同意开展。做好行前安全教育与过程监管。</div></li>
+        <li class="done"><div class="tl-title">报名入口自动推送 <span class="tl-time">2026-09-04 16:21</span></div><div class="tl-body">已推送至三年级 2 班 / 5 班家长端，报名时间 09-05 至 09-30。</div></li>
+      </ul>
+    </div>
+    <div class="drawer-foot"><button class="btn ghost" data-close>关闭</button></div>`);
+}
+</script>
+</body>
+</html>

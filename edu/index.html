@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>年度数据看板 · 教育局管理端 · 研学澄心</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark" data-icon="logo"></span>
+      <span>
+        <span class="brand-name">研学澄心</span>
+        <span class="brand-sub" style="display:block">区县教育局管理端</span>
+      </span>
+    </a>
+    <nav class="nav-main">
+      <a class="nav-item active" href="index.html">数据看板</a>
+      <a class="nav-item" href="schools.html">学校管理</a>
+      <a class="nav-item" href="orgs.html">机构管理</a>
+      <a class="nav-item" href="routes.html">线路管理</a>
+      <a class="nav-item" href="approvals.html">活动审批</a>
+      <a class="nav-item" href="funds.html">资金分账</a>
+      <a class="nav-item" href="safety.html">安全应急</a>
+      <a class="nav-item" href="archive.html">研学档案</a>
+    </nav>
+    <div class="top-actions">
+      <div class="top-search"><span data-icon="search" data-size="14"></span><input placeholder="搜索学校 / 机构 / 活动…"></div>
+      <button class="icon-btn" data-theme-toggle data-theme-ic title="切换明暗主题"></button>
+      <button class="icon-btn" title="通知"><span data-icon="bell"></span><span class="badge-dot"></span></button>
+      <div class="user-chip">
+        <span class="avatar">周</span>
+        <span><span class="u-name" style="display:block">周科长</span><span class="u-role" style="display:block">晴川区教育局 · 科室审批员</span></span>
+        <span data-icon="chevD" data-size="13"></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="breadcrumb">
+    <a href="index.html">教育局管理端</a><span class="sep">/</span><span class="cur">年度数据看板</span>
+  </div>
+  <div class="page-head">
+    <div>
+      <h1 class="page-title">年度数据看板</h1>
+      <p class="page-sub">核心指标卡实时直查（≤500ms）· 聚合图表 Redis 缓存 60 秒 · 手动刷新 30 秒内仅一次</p>
+    </div>
+    <div class="page-actions">
+      <div class="search-box"><span data-icon="calendar" data-size="13"></span><input value="2026 年度" style="width:90px"></div>
+      <button class="btn ghost" data-dash-refresh><span data-icon="refresh" data-size="13"></span>刷新数据</button>
+      <button class="btn ghost"><span data-icon="download" data-size="13"></span>导出报告</button>
+    </div>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi">
+      <span class="k-icon" data-icon="flag"></span>
+      <div class="k-body">
+        <div class="k-label">进行中活动场次</div>
+        <div class="k-value" data-count="3">0</div>
+        <div class="k-foot">含报名中 1 场 · 已通过待报名 1 场 · 执行中 1 场</div>
+      </div>
+    </div>
+    <div class="kpi">
+      <span class="k-icon blue" data-icon="users"></span>
+      <div class="k-body">
+        <div class="k-label">今日参与人次</div>
+        <div class="k-value" data-count="128">0</div>
+        <div class="k-foot"><span class="delta-up"><span data-icon="trend" data-size="12"></span>12.3%</span> 较昨日同期</div>
+      </div>
+    </div>
+    <div class="kpi">
+      <span class="k-icon amber" data-icon="calendar"></span>
+      <div class="k-body">
+        <div class="k-label">年度累计场次</div>
+        <div class="k-value" data-count="46">0</div>
+        <div class="k-foot"><span class="delta-up"><span data-icon="trend" data-size="12"></span>15.0%</span> 同比去年 40 场</div>
+      </div>
+    </div>
+    <div class="kpi">
+      <span class="k-icon pink" data-icon="trend"></span>
+      <div class="k-body">
+        <div class="k-label">年度累计参与人次</div>
+        <div class="k-value" data-count="12846">0</div>
+        <div class="k-foot"><span class="delta-up"><span data-icon="trend" data-size="12"></span>9.4%</span> 同比去年 11,742 人次</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-3 mt-14">
+    <div class="kpi" style="cursor:pointer" onclick="location.href='routes.html'">
+      <span class="k-icon amber" data-icon="route"></span>
+      <div class="k-body">
+        <div class="k-label">待审批线路数</div>
+        <div class="k-value" style="font-size:22px" data-count="2">0</div>
+        <div class="k-foot">审核中 2 条 · 近 7 日新提交 1 条</div>
+      </div>
+    </div>
+    <div class="kpi" style="cursor:pointer" onclick="location.href='safety.html'">
+      <span class="k-icon" data-icon="msg"></span>
+      <div class="k-body">
+        <div class="k-label">待处理投诉数</div>
+        <div class="k-value" style="font-size:22px" data-count="3">0</div>
+        <div class="k-foot">其中 1 条超 24 小时未响应</div>
+      </div>
+    </div>
+    <div class="kpi" style="cursor:pointer" onclick="location.href='funds.html'">
+      <span class="k-icon blue" data-icon="bank"></span>
+      <div class="k-body">
+        <div class="k-label">备付金账户余额（仅对账，不可动用）</div>
+        <div class="k-value" style="font-size:22px" data-count="1286400" data-fmt="money">¥0.00</div>
+        <div class="k-foot">托管于持牌支付机构 · 点击查看资金分账</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-2 mt-14">
+    <div class="card">
+      <div class="card-head">
+        <div><div class="card-title">月度活动场次与参与人次趋势</div><div class="card-sub">2026 年 1–9 月 · 两图独立量纲</div></div>
+        <span class="pill plain">Redis 缓存 60s</span>
+      </div>
+      <div class="card-pad" style="display:flex;gap:24px;flex-wrap:wrap">
+        <div style="flex:1;min-width:220px">
+          <div class="small muted mb-8">活动场次（场）</div>
+          <div class="chart-box" id="chFields"></div>
+        </div>
+        <div style="flex:1;min-width:220px">
+          <div class="small muted mb-8">参与人次（人次）</div>
+          <div class="chart-box" id="chPeo"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <div><div class="card-title">月度交易额趋势</div><div class="card-sub">2026 年 1–9 月 · 单位：元</div></div>
+        <span class="pill plain">Redis 缓存 60s</span>
+      </div>
+      <div class="card-pad">
+        <div class="chart-box" id="chMoney"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-3 mt-14">
+    <div class="card">
+      <div class="card-head"><div><div class="card-title">活动主题分布</div><div class="card-sub">2026 年度 · 共 46 场</div></div></div>
+      <div class="card-pad" style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+        <div class="chart-box" id="chTheme"></div>
+        <div class="chart-legend" style="flex:1;padding:0;min-width:140px" id="themeLegend"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div><div class="card-title">年级参与分布</div><div class="card-sub">2026 年度 · 共 12,846 人次</div></div></div>
+      <div class="card-pad" style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+        <div class="chart-box" id="chGrade"></div>
+        <div class="chart-legend" style="flex:1;padding:0;min-width:140px" id="gradeLegend"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div><div class="card-title">机构业务量排行</div><div class="card-sub">按承办活动场次 · 2026 年度</div></div></div>
+      <div class="card-pad">
+        <div class="chart-box" id="chOrg"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-3 mt-14">
+    <div class="card">
+      <div class="card-head"><div><div class="card-title">审批效率</div><div class="card-sub">科室 ≤3 工作日 · 终审 ≤2 工作日</div></div></div>
+      <div class="card-pad">
+        <div class="stat-strip mb-12">
+          <div class="ss-item"><div class="ss-val">92.4%</div><div class="ss-label">审批通过率</div></div>
+          <div class="ss-item"><div class="ss-val">1.6<span class="small">天</span></div><div class="ss-label">平均科室审批</div></div>
+          <div class="ss-item"><div class="ss-val">1.2<span class="small">天</span></div><div class="ss-label">平均终审时长</div></div>
+        </div>
+        <div class="banner warn"><span class="b-ic" data-icon="clock" data-size="14"></span><div>当前有 <a href="approvals.html"><b>2 单超时待处理</b></a>：活动审批 1 单（科室 4.2 个工作日）、线路备案 1 单（3.8 个工作日），已自动发送提醒。</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div><div class="card-title">安全事件处置</div><div class="card-sub">2026 年度台账 8 起</div></div></div>
+      <div class="card-pad">
+        <div class="stat-strip mb-12">
+          <div class="ss-item"><div class="ss-val ok-ink">100%</div><div class="ss-label">处置办结率</div></div>
+          <div class="ss-item"><div class="ss-val">3.2<span class="small">天</span></div><div class="ss-label">平均处置时长</div></div>
+          <div class="ss-item"><div class="ss-val">0</div><div class="ss-label">未结案事件</div></div>
+        </div>
+        <div class="banner brand"><span class="b-ic" data-icon="shield" data-size="14"></span><div>全部事件已闭环，处置过程与结案报告完整归档，<a href="safety.html">查看台账</a>。</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div><div class="card-title">机构信用等级分布</div><div class="card-sub">基于学校评价 · 家长评价 · 安全事件</div></div></div>
+      <div class="card-pad">
+        <div class="rank-list">
+          <li><span class="rk-no">A</span><span class="rk-name">A 级 · 2 家（启程研学教育、松果少年营地）</span><span class="rk-val">2</span></li>
+          <li><span class="rk-no">B</span><span class="rk-name">B 级 · 2 家（山海行知研学、星河研学旅行）</span><span class="rk-val">2</span></li>
+          <li><span class="rk-no">C</span><span class="rk-name">C 级 · 1 家（青禾研学）</span><span class="rk-val">1</span></li>
+          <li><span class="rk-no">D</span><span class="rk-name">D 级 · 1 家（笃行研学）</span><span class="rk-val">1</span></li>
+        </div>
+        <div class="banner warn mt-8"><span class="b-ic" data-icon="alert" data-size="14"></span><div>笃行研学为 D 级，<b>已限制新线路发布</b>，待完成整改评估后恢复。</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mt-14" style="padding:12px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+    <span class="small muted" data-updated-at>数据更新时间：2026-09-12 10:24:36</span>
+    <span class="small muted">核心卡片直查数据库 · 聚合图表 Redis 60s 缓存 · 手动刷新 30 秒限一次</span>
+  </div>
+</main>
+
+<footer class="foot">
+  研学澄心 · 高保真原型 V5 · 设计语言「晴空极简」（松石青 / 无侧栏顶部通栏 / 明暗双主题）<br>
+  演示区：晴川区 · 演示数据为虚构样本
+</footer>
+
+<script src="../assets/proto.js"></script>
+<script>
+(function () {
+  const M = ['1月','2月','3月','4月','5月','6月','7月','8月','9月'];
+  barChart($('#chFields'), { data: [4,6,3,5,7,4,6,8,5].map((v,i)=>({label:M[i],value:v})), height: 210, xLabels: M });
+  barChart($('#chPeo'), { data: [620,940,480,760,1100,680,890,1240,760].map((v,i)=>({label:M[i],value:v})), height: 210, xLabels: M, color: 'var(--info)' });
+  lineChart($('#chMoney'), { xLabels: M, height: 250, fmt: v => fmtInt(v/10000)+'万', unit: '',
+    series: [{ name: '月度交易额', color: 'var(--c1)', data: [186400,244800,158200,298600,342800,268400,312600,412800,286400] }] });
+
+  const theme = [
+    { label:'自然生态', value:11, color:'var(--d1)' },
+    { label:'劳动实践', value:9, color:'var(--d2)' },
+    { label:'人文历史', value:8, color:'var(--d3)' },
+    { label:'科技工业', value:7, color:'var(--d4)' },
+    { label:'传统文化', value:6, color:'var(--d5)' },
+    { label:'其他', value:5, color:'var(--c-other)' }
+  ];
+  donutChart($('#chTheme'), { data: theme, centerTitle: '46', centerSub: '场 · 2026年度' });
+  $('#themeLegend').innerHTML = theme.map(d =>
+    `<span class="lg-item"><span class="lg-dot" style="background:${d.color}"></span>${d.label} · ${d.value}场（${(d.value/46*100).toFixed(0)}%）</span>`).join('');
+
+  const grade = [
+    { label:'1-2年级', value:2312, color:'var(--d1)' },
+    { label:'3-4年级', value:4368, color:'var(--d2)' },
+    { label:'5-6年级', value:3726, color:'var(--d3)' },
+    { label:'7-9年级', value:2440, color:'var(--d4)' }
+  ];
+  donutChart($('#chGrade'), { data: grade, centerTitle: '12,846', centerSub: '人次 · 2026年度' });
+  $('#gradeLegend').innerHTML = grade.map(d =>
+    `<span class="lg-item"><span class="lg-dot" style="background:${d.color}"></span>${d.label} · ${fmtInt(d.value)}（${(d.value/12846*100).toFixed(1)}%）</span>`).join('');
+
+  hBarChart($('#chOrg'), { fmt: v => v + ' 场', unit: ' 场',
+    data: [
+      { label:'启程研学教育', value:12 },
+      { label:'山海行知研学', value:9 },
+      { label:'松果少年营地', value:8 },
+      { label:'星河研学旅行', value:7 },
+      { label:'青禾研学', value:6 },
+      { label:'笃行研学', value:4 }
+    ]});
+
+  $$('[data-count]').forEach(el => {
+    const fmt = el.dataset.fmt === 'money' ? v => fmtMoney(v) : v => fmtInt(Math.round(v));
+    countUp(el, +el.dataset.count, { fmt });
+  });
+})();
+</script>
+</body>
+</html>

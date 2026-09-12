@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的档案 · 研学澄心 · 家长小程序</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<main class="phone-stage">
+  <button class="icon-btn" data-theme-toggle data-theme-ic title="切换明暗主题" style="position:fixed;top:16px;right:16px;background:var(--card);border:1px solid var(--line)"></button>
+  <div class="phone">
+    <div class="phone-notch"></div>
+    <div class="phone-screen">
+      <div class="p-status"><span>9:41</span><span style="letter-spacing:1px">我的</span><span>晴川区</span></div>
+      <div class="p-head">
+        <div class="avatar" style="width:34px;height:34px;flex-basis:34px">苏</div>
+        <div style="flex:1"><div class="p-title">我的</div><div class="small muted">苏妍 · 138****3528</div></div>
+        <span data-icon="settings" data-size="16" style="color:var(--ink-2)"></span>
+      </div>
+      <div class="p-body">
+        <div class="p-card" style="display:flex;align-items:center;gap:10px">
+          <span class="p-kid-chip on" style="cursor:default">苏小禾 · 三年级 2 班</span>
+          <span class="p-kid-chip" style="cursor:pointer" onclick="Toast('已切换至苏小苗','ok')">苏小苗 · 一年级 1 班</span>
+        </div>
+
+        <div class="p-sec-title">我的报名</div>
+        <div class="p-act-card" data-for="su">
+          <div class="p-act-body">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+              <div class="p-act-title" style="font-size:13.5px">湿地生态研学营</div>
+              <span class="pill ok">已报名</span>
+            </div>
+            <div class="p-act-meta">
+              <span><span data-icon="calendar" data-size="11"></span>2026-10-17</span>
+              <span><span data-icon="org" data-size="11"></span>启程研学教育</span>
+            </div>
+            <div class="small muted mt-8" style="line-height:1.7">支付凭证：WXPAY20260912102418012<br>知情同意书：已签署 · 含时间戳 PDF 已存档</div>
+          </div>
+        </div>
+
+        <div class="p-sec-title">研学档案（苏小禾）</div>
+        <div class="p-card">
+          <ul class="timeline" style="padding-left:0">
+            <li class="done"><div class="tl-title">湿地生态研学营 <span class="pill brand">待出行</span><span class="tl-time">2026-10-17</span></div><div class="tl-body">启程研学教育 · 自然生态 · 24 学时待认定</div></li>
+            <li class="done"><div class="tl-title">田野农耕体验 <span class="tl-time">2026-08-30</span></div><div class="tl-body">山海行知研学 · 劳动实践 · 学校评价：表现优秀</div>
+              <div class="flex gap-8 mt-8">
+                <button class="p-mini-btn" onclick="Toast('研学证书已下载（演示）','ok')"><span data-icon="cert" data-size="12"></span>证书</button>
+                <button class="p-mini-btn" onclick="Toast('研学报告已下载（演示）','ok')"><span data-icon="doc" data-size="12"></span>报告</button>
+                <button class="p-mini-btn" onclick="Toast('已复制分享链接，好友打开即可查看（演示）','ok')"><span data-icon="send" data-size="12"></span>分享</button>
+              </div>
+            </li>
+            <li class="done"><div class="tl-title">植物园春日研学 <span class="tl-time">2026-05-09</span></div><div class="tl-body">启程研学教育 · 自然生态 · 学校评价：表现良好</div>
+              <div class="flex gap-8 mt-8">
+                <button class="p-mini-btn" onclick="Toast('研学证书已下载（演示）','ok')"><span data-icon="cert" data-size="12"></span>证书</button>
+                <button class="p-mini-btn" onclick="Toast('研学报告已下载（演示）','ok')"><span data-icon="doc" data-size="12"></span>报告</button>
+                <button class="p-mini-btn" onclick="Toast('已复制分享链接，好友打开即可查看（演示）','ok')"><span data-icon="send" data-size="12"></span>分享</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-sec-title">活动评价 <span class="small muted">结束 7 天内可评价</span></div>
+        <div class="p-card">
+          <div class="small muted" style="line-height:1.7">田野农耕体验（2026-08-30 结束）<span class="pill ok" style="height:18px">可评价 · 剩 5 天</span></div>
+          <div class="p-form-label">整体满意度</div>
+          <div class="flex gap-4" id="stars" style="font-size:24px;color:var(--line-strong);cursor:pointer;letter-spacing:2px">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <div class="p-form-label">细分维度</div>
+          <div id="dims"></div>
+          <button class="p-btn mt-12" onclick="Toast('评价已提交，感谢您的反馈（将计入机构信用评级）','ok')">提交评价</button>
+          <div class="small muted mt-8" style="text-align:center">海洋馆奇妙夜 · 已超评价期 · 评价入口已关闭</div>
+        </div>
+      </div>
+      <div class="p-tabbar">
+        <div class="p-tab" onclick="location.href='home.html'"><span class="tb-ic" data-icon="home" data-size="19"></span>首页</div>
+        <div class="p-tab" onclick="Toast('活动列表页（演示）','ok')"><span class="tb-ic" data-icon="list" data-size="19"></span>活动</div>
+        <div class="p-tab on" onclick="location.href='archive.html'"><span class="tb-ic" data-icon="user" data-size="19"></span>我的</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div style="position:fixed;bottom:14px;left:0;right:0;text-align:center;font-size:11px;color:var(--ink-3)">
+  研学澄心 · 家长报名支付端（微信小程序 · 手机演示）· 设计语言「晴空极简」· 演示数据为虚构样本
+</div>
+
+<script src="../assets/proto.js"></script>
+<script>
+(function () {
+  const stars = document.querySelectorAll('#stars span');
+  stars.forEach((s, i) => s.addEventListener('click', () => {
+    stars.forEach((x, j) => { x.style.color = j <= i ? '#f59e0b' : 'var(--line-strong)'; });
+  }));
+  const dims = ['课程质量', '安全保障', '餐饮住宿', '导师服务', '沟通响应'];
+  document.getElementById('dims').innerHTML = dims.map(d =>
+    `<div class="flex items-center gap-8" style="margin-bottom:8px"><span class="small muted" style="flex:0 0 64px">${d}</span><span class="flex gap-2" style="font-size:17px;color:var(--line-strong);cursor:pointer" data-dim>★★<span style="font-size:0;display:none">★★★★★</span></span></div>`).join('');
+  document.querySelectorAll('[data-dim]').forEach(el => {
+    el.innerHTML = '<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>';
+    el.querySelectorAll('span').forEach((s, i) => s.addEventListener('click', () => {
+      el.querySelectorAll('span').forEach((x, j) => { x.style.color = j <= i ? '#f59e0b' : 'var(--line-strong)'; });
+    }));
+  });
+})();
+</script>
+</body>
+</html>

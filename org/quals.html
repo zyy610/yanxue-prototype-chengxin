@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>资质管理 · 机构端 · 研学澄心</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark" data-icon="logo"></span>
+      <span>
+        <span class="brand-name">研学澄心</span>
+        <span class="brand-sub" style="display:block">机构端</span>
+      </span>
+    </a>
+    <nav class="nav-main">
+      <a class="nav-item" href="index.html">工作台</a>
+      <a class="nav-item active" href="quals.html">资质管理</a>
+      <a class="nav-item" href="routes.html">线路发布</a>
+      <a class="nav-item" href="orders.html">订单报名</a>
+      <a class="nav-item" href="settlement.html">结算对账</a>
+    </nav>
+    <div class="top-actions">
+      <div class="top-search"><span data-icon="search" data-size="14"></span><input placeholder="搜索线路 / 订单 / 活动…"></div>
+      <button class="icon-btn" data-theme-toggle data-theme-ic title="切换明暗主题"></button>
+      <button class="icon-btn" title="通知"><span data-icon="bell"></span><span class="badge-dot"></span></button>
+      <div class="user-chip">
+        <span class="avatar">何</span>
+        <span><span class="u-name" style="display:block">何老师</span><span class="u-role" style="display:block">启程研学教育 · 机构管理员</span></span>
+        <span data-icon="chevD" data-size="13"></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="breadcrumb">
+    <a href="index.html">机构端</a><span class="sep">/</span><span class="cur">资质管理</span>
+  </div>
+  <div class="page-head">
+    <div>
+      <h1 class="page-title">资质管理</h1>
+      <p class="page-sub">资质文件到期自动预警 · 变更需教育局审核 · 黑名单公示</p>
+    </div>
+    <div class="page-actions">
+      <button class="btn primary" onclick="Toast('已打开资质上传（演示）','ok')"><span data-icon="upload" data-size="13"></span>上传资质</button>
+    </div>
+  </div>
+
+  <div data-tabs>
+    <div class="tabs">
+      <span class="tab on">机构资质</span>
+      <span class="tab">研学导师备案</span>
+      <span class="tab">审核进度</span>
+    </div>
+
+    <div class="tab-pane on">
+      <div class="banner brand mb-16"><span class="b-ic" data-icon="shield" data-size="14"></span><div>4 项资质全部有效 · 最近到期 <b>2027-03-15</b>（旅行社经营许可证）· 到期前 90 天系统自动提醒。</div></div>
+      <div class="grid grid-2">
+        <div class="card card-pad">
+          <div class="flex items-center gap-12 mb-8">
+            <span class="k-icon" data-icon="doc"></span>
+            <div style="flex:1"><div class="strong">营业执照</div><div class="small muted">统一社会信用代码 9152****0321</div></div>
+            <span class="pill ok"><span class="dot"></span>有效</span>
+          </div>
+          <div class="kv">
+            <div class="kv-item"><span class="k">有效期至</span><span class="v num">2030-06-30</span></div>
+            <div class="kv-item"><span class="k">最近核验</span><span class="v num">2026-07-15 · 教育局通过</span></div>
+          </div>
+          <div class="file-row" style="border:none;padding:0;margin:10px 0 0"><span class="small muted">营业执照扫描件.pdf · 2.4 MB</span><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('已下载原件（演示）','ok')"><span data-icon="download" data-size="12"></span>下载</button></div>
+        </div>
+        <div class="card card-pad">
+          <div class="flex items-center gap-12 mb-8">
+            <span class="k-icon" data-icon="cert"></span>
+            <div style="flex:1"><div class="strong">旅行社经营许可证</div><div class="small muted">编号 L-QC-2024-018</div></div>
+            <span class="pill ok"><span class="dot"></span>有效</span>
+          </div>
+          <div class="kv">
+            <div class="kv-item"><span class="k">有效期至</span><span class="v num">2027-03-15</span></div>
+            <div class="kv-item"><span class="k">提醒设置</span><span class="v">到期前 90 天 / 30 天 / 7 天</span></div>
+          </div>
+          <div class="file-row" style="border:none;padding:0;margin:10px 0 0"><span class="small muted">经营许可证扫描件.pdf · 1.8 MB</span><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('已下载原件（演示）','ok')"><span data-icon="download" data-size="12"></span>下载</button></div>
+        </div>
+        <div class="card card-pad">
+          <div class="flex items-center gap-12 mb-8">
+            <span class="k-icon" data-icon="award"></span>
+            <div style="flex:1"><div class="strong">研学资质证明</div><div class="small muted">市级研学实践教育基地</div></div>
+            <span class="pill ok"><span class="dot"></span>有效</span>
+          </div>
+          <div class="kv">
+            <div class="kv-item"><span class="k">有效期至</span><span class="v num">2028-05-20</span></div>
+            <div class="kv-item"><span class="k">发证单位</span><span class="v">市教育局</span></div>
+          </div>
+          <div class="file-row" style="border:none;padding:0;margin:10px 0 0"><span class="small muted">研学基地认定文件.pdf · 3.1 MB</span><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('已下载原件（演示）','ok')"><span data-icon="download" data-size="12"></span>下载</button></div>
+        </div>
+        <div class="card card-pad">
+          <div class="flex items-center gap-12 mb-8">
+            <span class="k-icon" data-icon="shield"></span>
+            <div style="flex:1"><div class="strong">保险方案</div><div class="small muted">研学活动意外险 · 每人保额 50 万</div></div>
+            <span class="pill ok"><span class="dot"></span>有效</span>
+          </div>
+          <div class="kv">
+            <div class="kv-item"><span class="k">保障期间</span><span class="v num">2026-09-01 至 2027-08-31</span></div>
+            <div class="kv-item"><span class="k">承保公司</span><span class="v">平安产险</span></div>
+          </div>
+          <div class="file-row" style="border:none;padding:0;margin:10px 0 0"><span class="small muted">保险方案确认函.pdf · 0.9 MB</span><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('已下载原件（演示）','ok')"><span data-icon="download" data-size="12"></span>下载</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane">
+      <div class="banner info mb-16"><span class="b-ic" data-icon="users" data-size="14"></span><div><b>导师备案说明：</b>研学导师备案后可在多家机构执业（一名导师多机构备案），身份信息与证书需经教育局核验。</div></div>
+      <div class="card">
+        <div class="toolbar">
+          <span class="card-title" style="font-size:14px">已备案导师（4 名）</span>
+          <span class="spacer"></span>
+          <button class="btn primary sm" onclick="Toast('已打开导师备案表单（演示）','ok')"><span data-icon="plus" data-size="12"></span>备案新导师</button>
+        </div>
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead><tr><th>导师姓名</th><th>身份证号</th><th>导师证书</th><th>证书有效期</th><th>备案机构</th><th>状态</th><th style="text-align:right">操作</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="t-main">何老师<div class="t-sub">从业 6 年 · 带队 42 场</div></td><td class="num">4201**********4821</td>
+                <td>研学导师资格证 · YXD-2020-3361</td><td class="num">2026-12-31 <span class="pill warn">即将到期</span></td>
+                <td><span class="tag">启程研学教育</span><span class="tag">山海行知研学</span></td>
+                <td><span class="pill ok"><span class="dot"></span>已备案</span></td>
+                <td class="t-right"><button class="btn ghost sm" onclick="Toast('已打开导师详情（演示）','ok')">详情</button></td>
+              </tr>
+              <tr>
+                <td class="t-main">林悦<div class="t-sub">从业 4 年 · 带队 27 场</div></td><td class="num">4301**********2274</td>
+                <td>研学导师资格证 · YXD-2022-1187</td><td class="num">2027-06-30</td>
+                <td><span class="tag">启程研学教育</span></td>
+                <td><span class="pill ok"><span class="dot"></span>已备案</span></td>
+                <td class="t-right"><button class="btn ghost sm" onclick="Toast('已打开导师详情（演示）','ok')">详情</button></td>
+              </tr>
+              <tr>
+                <td class="t-main">罗大鹏<div class="t-sub">从业 8 年 · 带队 51 场</div></td><td class="num">4401**********0933</td>
+                <td>研学导师资格证 · YXD-2018-0872</td><td class="num">2026-12-31 <span class="pill warn">即将到期</span></td>
+                <td><span class="tag">启程研学教育</span><span class="tag">松果少年营地</span></td>
+                <td><span class="pill ok"><span class="dot"></span>已备案</span></td>
+                <td class="t-right"><button class="btn ghost sm" onclick="Toast('已打开导师详情（演示）','ok')">详情</button></td>
+              </tr>
+              <tr>
+                <td class="t-main">苏晚晴<div class="t-sub">从业 3 年 · 带队 18 场</div></td><td class="num">5101**********6618</td>
+                <td>研学导师资格证 · YXD-2023-2049</td><td class="num">2028-03-31</td>
+                <td><span class="tag">启程研学教育</span></td>
+                <td><span class="pill warn"><span class="dot"></span>审核中</span></td>
+                <td class="t-right"><button class="btn ghost sm" onclick="Toast('已打开导师详情（演示）','ok')">详情</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pager"><span>导师证书到期将影响线路备案与活动执行资格，请及时更新</span></div>
+      </div>
+    </div>
+
+    <div class="tab-pane">
+      <div class="card">
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead><tr><th>事项</th><th>提交时间</th><th>当前环节</th><th>审核状态</th><th>备注</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="t-main">研学导师备案 · 苏晚晴</td><td class="num">2026-09-10 16:20</td><td>教育局 · 周科长</td>
+                <td><span class="pill warn"><span class="dot"></span>审核中</span></td><td class="small muted">证书核验中，预计 3 个工作日内完成</td>
+              </tr>
+              <tr>
+                <td class="t-main">保险方案更新（2026-2027 年度）</td><td class="num">2026-08-28 10:05</td><td>教育局 · 周科长</td>
+                <td><span class="pill ok"><span class="dot"></span>已通过</span></td><td class="small muted">2026-09-01 生效</td>
+              </tr>
+              <tr>
+                <td class="t-main">经营许可证信息变更（地址）</td><td class="num">2026-05-14 09:40</td><td>教育局 · 周科长</td>
+                <td><span class="pill ok"><span class="dot"></span>已通过</span></td><td class="small muted">变更审核通过，2026-05-20 生效</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pager"><span>资质变更需教育局审核通过后生效</span></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  研学澄心 · 高保真原型 V5 · 设计语言「晴空极简」（松石青 / 无侧栏顶部通栏 / 明暗双主题）<br>
+  演示区：晴川区 · 演示数据为虚构样本
+</footer>
+
+<script src="../assets/proto.js"></script>
+</body>
+</html>

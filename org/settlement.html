@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>结算对账 · 机构端 · 研学澄心</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark" data-icon="logo"></span>
+      <span>
+        <span class="brand-name">研学澄心</span>
+        <span class="brand-sub" style="display:block">机构端</span>
+      </span>
+    </a>
+    <nav class="nav-main">
+      <a class="nav-item" href="index.html">工作台</a>
+      <a class="nav-item" href="quals.html">资质管理</a>
+      <a class="nav-item" href="routes.html">线路发布</a>
+      <a class="nav-item" href="orders.html">订单报名</a>
+      <a class="nav-item active" href="settlement.html">结算对账</a>
+    </nav>
+    <div class="top-actions">
+      <div class="top-search"><span data-icon="search" data-size="14"></span><input placeholder="搜索线路 / 订单 / 活动…"></div>
+      <button class="icon-btn" data-theme-toggle data-theme-ic title="切换明暗主题"></button>
+      <button class="icon-btn" title="通知"><span data-icon="bell"></span><span class="badge-dot"></span></button>
+      <div class="user-chip">
+        <span class="avatar">何</span>
+        <span><span class="u-name" style="display:block">何老师</span><span class="u-role" style="display:block">启程研学教育 · 机构管理员</span></span>
+        <span data-icon="chevD" data-size="13"></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="breadcrumb">
+    <a href="index.html">机构端</a><span class="sep">/</span><span class="cur">结算对账</span>
+  </div>
+  <div class="page-head">
+    <div>
+      <h1 class="page-title">结算对账（只读 · 自动到账）</h1>
+      <p class="page-sub">无需发起申请、无需点击确认 · 满足条件后系统每日 02:00 自动分账，98% 实时划转至本机构结算账户</p>
+    </div>
+  </div>
+
+  <div class="banner brand mb-16"><span class="b-ic" data-icon="wallet" data-size="14"></span><div>分账条件：活动结束 + 无争议期（默认 7 天）届满 + 无未结投诉/安全事件。分账失败时请修正银行账户信息后联系教育局管理员手动重试。结算单 PDF 可作为财务入账凭证。</div></div>
+
+  <div class="grid grid-4 mb-16">
+    <div class="kpi"><span class="k-icon" data-icon="bank"></span><div class="k-body"><div class="k-label">累计实际到账（2026）</div><div class="k-value" style="font-size:22px">¥486,240.00</div><div class="k-foot">8 张结算单</div></div></div>
+    <div class="kpi"><span class="k-icon amber" data-icon="clock"></span><div class="k-body"><div class="k-label">待结算金额</div><div class="k-value" style="font-size:22px">¥124,600.00</div><div class="k-foot">无争议期内 2 场</div></div></div>
+    <div class="kpi"><span class="k-icon blue" data-icon="coin"></span><div class="k-body"><div class="k-label">累计平台服务费</div><div class="k-value" style="font-size:22px">¥9,924.00</div><div class="k-foot">按交易额 2% 计</div></div></div>
+    <div class="kpi"><span class="k-icon pink" data-icon="refresh"></span><div class="k-body"><div class="k-label">退费抵扣</div><div class="k-value" style="font-size:22px">¥0.00</div><div class="k-foot">已分账退费从待结算款自动抵扣</div></div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><div><div class="card-title">结算单列表</div><div class="card-sub">只读展示 · 系统自动生成 · 支持下载 PDF 凭证</div></div></div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>结算单号</th><th>活动信息</th><th>参与人数</th><th>交易总额</th><th>平台服务费（2%）</th><th>实际到账（98%）</th><th>状态</th><th style="text-align:right">操作</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="num mono">ST-2026-0081</td>
+            <td class="t-main">湿地生态研学营<div class="t-sub">晴川实验小学 · 2026-10-17 · 进行中</div></td>
+            <td class="num">86 人（报名中）</td>
+            <td class="num money">¥28,208.00</td>
+            <td class="num">¥564.16（预估）</td>
+            <td class="num money">¥27,643.84（预估）</td>
+            <td><span class="pill warn"><span class="dot"></span>待结算</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openSt('ST-2026-0081','湿地生态研学营',true)">预估明细</button></div></td>
+          </tr>
+          <tr>
+            <td class="num mono">ST-2026-0075</td>
+            <td class="t-main">湿地初探半日营<div class="t-sub">晴川实验小学 · 2026-09-18 · 执行中</div></td>
+            <td class="num">89 人</td>
+            <td class="num money">¥14,952.00</td>
+            <td class="num">¥299.04（预估）</td>
+            <td class="num money">¥14,652.96（预估）</td>
+            <td><span class="pill warn"><span class="dot"></span>待结算</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openSt('ST-2026-0075','湿地初探半日营',true)">预估明细</button></div></td>
+          </tr>
+          <tr>
+            <td class="num mono">ST-2026-0068</td>
+            <td class="t-main">海洋馆奇妙夜<div class="t-sub">晴川第二小学 · 2026-05-22 · 已分账</div></td>
+            <td class="num">132 人</td>
+            <td class="num money">¥35,376.00</td>
+            <td class="num">¥707.52</td>
+            <td class="num money">¥34,668.48</td>
+            <td><span class="pill ok"><span class="dot"></span>已到账</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openSt('ST-2026-0068','海洋馆奇妙夜',false)">结算单</button><button class="btn ghost sm" onclick="Toast('结算单 ST-2026-0068.pdf 已下载（财务凭证）','ok')"><span data-icon="download" data-size="12"></span>下载 PDF</button></div></td>
+          </tr>
+          <tr>
+            <td class="num mono">ST-2026-0063</td>
+            <td class="t-main">植物园春日研学<div class="t-sub">晴川实验小学 · 2026-05-09 · 已分账</div></td>
+            <td class="num">208 人</td>
+            <td class="num money">¥34,944.00</td>
+            <td class="num">¥698.88</td>
+            <td class="num money">¥34,245.12</td>
+            <td><span class="pill ok"><span class="dot"></span>已到账</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openSt('ST-2026-0063','植物园春日研学',false)">结算单</button><button class="btn ghost sm" onclick="Toast('结算单 ST-2026-0063.pdf 已下载（财务凭证）','ok')"><span data-icon="download" data-size="12"></span>下载 PDF</button></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pager"><span>结算单只读，系统自动生成 · 活动结束日期即结算流程起点，无需机构确认</span></div>
+  </div>
+
+  <div class="card mt-16">
+    <div class="card-head"><div><div class="card-title">失败处理说明</div></div></div>
+    <div class="card-pad">
+      <div class="banner warn"><span class="b-ic" data-icon="alert" data-size="14"></span><div>若分账失败（如银行账户信息有误）：系统告警同步通知教育局与本机构 → 本机构在「资质管理 → 结算账户」<b>修正账户信息</b> → 联系教育局管理员在后台点击「重新分账」手动重试。已分账订单的退费从本机构后续待结算款中自动抵扣，抵扣明细可在此查看。</div></div>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  研学澄心 · 高保真原型 V5 · 设计语言「晴空极简」（松石青 / 无侧栏顶部通栏 / 明暗双主题）<br>
+  演示区：晴川区 · 演示数据为虚构样本 · 资金数字仅作界面演示
+</footer>
+
+<script src="../assets/proto.js"></script>
+<script>
+function openSt(no, name, est) {
+  openDrawer(`
+    <div class="drawer-head"><div><div class="card-title" style="font-size:15px">结算单 ${no} · ${name}</div><div class="small muted">${est ? '预估试算（报名进行中）' : '已分账 · 自动到账'}</div></div><button class="icon-btn" data-close><span data-icon="x" data-size="14"></span></button></div>
+    <div class="drawer-body">
+      ${est ? '<div class="banner info mb-12"><span class="b-ic" data-icon="info" data-size="14"></span><div>报名尚未截止，以下为按当前报名人数实时试算的预估金额，最终以报名截止锁定名单为准。</div></div>' : '<div class="banner brand mb-12"><span class="b-ic" data-icon="checkCircle" data-size="14"></span><div>已自动分账至本机构结算账户（尾号 4821），无需任何确认操作。</div></div>'}
+      <div class="kv">
+        <div class="kv-item"><span class="k">活动信息</span><span class="v">${name} · 晴川实验小学 · 2026-10-17</span></div>
+        <div class="kv-item"><span class="k">参与人数</span><span class="v num">86 人</span></div>
+        <div class="kv-item"><span class="k">交易总额</span><span class="v money">¥28,208.00</span></div>
+        <div class="kv-item"><span class="k">单价</span><span class="v money">¥328.00/人</span></div>
+        <div class="kv-item"><span class="k">平台服务费（2%）</span><span class="v num">¥564.16</span></div>
+        <div class="kv-item"><span class="k">实际到账（98%）</span><span class="v money" style="font-size:15px">¥27,643.84</span></div>
+        <div class="kv-item"><span class="k">分账时间</span><span class="v num">${est ? '预计 2026-10-25 02:00' : '2026-06-07 02:00:08'}</span></div>
+        <div class="kv-item"><span class="k">支付机构流水号</span><span class="v mono small num">WXSP20260607020008-B3</span></div>
+        <div class="kv-item"><span class="k">状态</span><span class="v">${est ? '<span class="pill warn"><span class="dot"></span>待结算（报名中）</span>' : '<span class="pill ok"><span class="dot"></span>成功 · 已到账</span>'}</span></div>
+        <div class="kv-item"><span class="k">退费抵扣</span><span class="v num">¥0.00</span></div>
+      </div>
+    </div>
+    <div class="drawer-foot"><button class="btn ghost" data-close>关闭</button>${est ? '' : `<button class="btn primary" onclick="Toast('结算单 ${no}.pdf 已下载（财务入账凭证）','ok')"><span data-icon="download" data-size="13"></span>下载结算单 PDF</button>`}</div>`);
+}
+</script>
+</body>
+</html>

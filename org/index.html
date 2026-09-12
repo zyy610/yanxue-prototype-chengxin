@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>机构工作台 · 机构端 · 研学澄心</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark" data-icon="logo"></span>
+      <span>
+        <span class="brand-name">研学澄心</span>
+        <span class="brand-sub" style="display:block">机构端</span>
+      </span>
+    </a>
+    <nav class="nav-main">
+      <a class="nav-item active" href="index.html">工作台</a>
+      <a class="nav-item" href="quals.html">资质管理</a>
+      <a class="nav-item" href="routes.html">线路发布</a>
+      <a class="nav-item" href="orders.html">订单报名</a>
+      <a class="nav-item" href="settlement.html">结算对账</a>
+    </nav>
+    <div class="top-actions">
+      <div class="top-search"><span data-icon="search" data-size="14"></span><input placeholder="搜索线路 / 订单 / 活动…"></div>
+      <button class="icon-btn" data-theme-toggle data-theme-ic title="切换明暗主题"></button>
+      <button class="icon-btn" title="通知"><span data-icon="bell"></span><span class="badge-dot"></span></button>
+      <div class="user-chip">
+        <span class="avatar">何</span>
+        <span><span class="u-name" style="display:block">何老师</span><span class="u-role" style="display:block">启程研学教育 · 机构管理员</span></span>
+        <span data-icon="chevD" data-size="13"></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="breadcrumb">
+    <a href="index.html">机构端</a><span class="sep">/</span><span class="cur">工作台</span>
+  </div>
+  <div class="page-head">
+    <div>
+      <h1 class="page-title">机构工作台</h1>
+      <p class="page-sub">启程研学教育 · 信用等级 A · 入驻 2024-03-12</p>
+    </div>
+    <div class="page-actions">
+      <button class="btn primary" onclick="location.href='routes.html'"><span data-icon="plus" data-size="13"></span>发布新线路</button>
+    </div>
+  </div>
+
+  <div class="grid grid-5 mb-16">
+    <div class="kpi"><span class="k-icon" data-icon="shield"></span><div class="k-body"><div class="k-label">资质状态</div><div class="k-value" style="font-size:22px"><span class="pill ok">4/4 有效</span></div><div class="k-foot">最近到期 2027-03-15</div></div></div>
+    <div class="kpi"><span class="k-icon blue" data-icon="route"></span><div class="k-body"><div class="k-label">线路备案</div><div class="k-value" style="font-size:22px"><span class="pill ok">2 条</span></div><div class="k-foot">审核中 1 条</div></div></div>
+    <div class="kpi"><span class="k-icon amber" data-icon="flag"></span><div class="k-body"><div class="k-label">进行中订单</div><div class="k-value" style="font-size:22px">3 <small>场</small></div><div class="k-foot">报名中 1 · 执行中 1</div></div></div>
+    <div class="kpi"><span class="k-icon pink" data-icon="wallet"></span><div class="k-body"><div class="k-label">待结算金额</div><div class="k-value" style="font-size:22px">¥124,600.00</div><div class="k-foot">自动分账 · 无需申请</div></div></div>
+    <div class="kpi"><span class="k-icon" data-icon="star" style="background:var(--ok-soft);color:var(--ok)"></span><div class="k-body"><div class="k-label">信用等级</div><div class="k-value" style="font-size:22px"><span class="credit A" style="width:26px;height:26px">A</span></div><div class="k-foot">学校 4.8 · 家长 4.9 · 零安全事件</div></div></div>
+  </div>
+
+  <div class="grid grid-32">
+    <div class="card">
+      <div class="card-head"><div><div class="card-title">进行中订单</div><div class="card-sub">报名名单自动同步 · 支持导出 Excel 安排车辆餐饮</div></div>
+        <a class="link-btn" href="orders.html">全部订单 <span data-icon="chevR" data-size="12"></span></a>
+      </div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>活动 / 学校</th><th>活动日期</th><th>报名</th><th>特殊需求</th><th>状态</th><th style="text-align:right">操作</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="t-main">湿地生态研学营<div class="t-sub">晴川实验小学</div></td>
+              <td class="num">2026-10-17</td>
+              <td><span class="num">86/96</span> <span class="small muted">候补 14</span></td>
+              <td><span class="pill warn">7 人</span></td>
+              <td><span class="pill brand"><span class="dot"></span>报名中</span></td>
+              <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn primary sm" onclick="location.href='orders.html'">查看名单</button></div></td>
+            </tr>
+            <tr>
+              <td class="t-main">湿地初探半日营<div class="t-sub">晴川实验小学</div></td>
+              <td class="num">2026-09-18</td>
+              <td><span class="num">89/90</span></td>
+              <td><span class="pill warn">4 人</span></td>
+              <td><span class="pill info"><span class="dot"></span>执行中</span></td>
+              <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn primary sm" onclick="location.href='orders.html'">查看名单</button></div></td>
+            </tr>
+            <tr>
+              <td class="t-main">海洋馆奇妙夜<div class="t-sub">晴川第二小学</div></td>
+              <td class="num">2026-05-22</td>
+              <td><span class="num">132/132</span></td>
+              <td><span class="pill warn">5 人</span></td>
+              <td><span class="pill gray">已结束</span></td>
+              <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="location.href='settlement.html'">查看结算</button></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pager"><span>活动结束后系统以活动结束日期为准自动进入结算流程，无需机构确认</span></div>
+    </div>
+
+    <div>
+      <div class="card mb-16">
+        <div class="card-head"><div><div class="card-title">快捷入口</div></div></div>
+        <div class="card-pad" style="padding-top:14px">
+          <div class="quick-grid" style="grid-template-columns:repeat(2,1fr)">
+            <div class="quick-item" onclick="location.href='routes.html'"><span class="q-ic" data-icon="route"></span>发布线路</div>
+            <div class="quick-item" onclick="location.href='quals.html'"><span class="q-ic" data-icon="shield"></span>资质管理</div>
+            <div class="quick-item" onclick="location.href='orders.html'"><span class="q-ic" data-icon="export"></span>导出名单</div>
+            <div class="quick-item" onclick="location.href='settlement.html'"><span class="q-ic" data-icon="wallet"></span>结算对账</div>
+            <div class="quick-item" onclick="openSafety()"><span class="q-ic" data-icon="siren" style="background:var(--bad-soft);color:var(--bad)"></span>安全上报</div>
+            <div class="quick-item" onclick="location.href='quals.html'"><span class="q-ic" data-icon="users"></span>导师备案</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div><div class="card-title">待办提醒</div></div></div>
+        <div class="card-pad" style="padding-top:14px">
+          <div class="banner warn mb-8"><span class="b-ic" data-icon="clock" data-size="14"></span><div><b>湿地生态研学营</b> 报名 86/96，建议提前确认车辆与餐饮供应商。</div></div>
+          <div class="banner info mb-8"><span class="b-ic" data-icon="route" data-size="14"></span><div><b>湿地观鸟小课堂</b> 备案审核中（已提交 5 天）。</div></div>
+          <div class="banner brand"><span class="b-ic" data-icon="shield" data-size="14"></span><div>研学导师 2 名证书将于 2026-12-31 到期，请及时更新。</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  研学澄心 · 高保真原型 V5 · 设计语言「晴空极简」（松石青 / 无侧栏顶部通栏 / 明暗双主题）<br>
+  演示区：晴川区 · 演示数据为虚构样本
+</footer>
+
+<script src="../assets/proto.js"></script>
+<script>
+function openSafety() {
+  openModal(`
+    <div class="modal-head"><div class="modal-title">安全事件即时上报</div><button class="icon-btn" data-close><span data-icon="x" data-size="14"></span></button></div>
+    <div class="modal-body">
+      <div class="banner warn mb-12"><span class="b-ic" data-icon="siren" data-size="14"></span><div>提交后<b>同步教育局与学校</b>。事件未结案将暂停相关活动自动分账。</div></div>
+      <div class="form-grid">
+        <div class="field"><div class="label"><span class="req">*</span>事件类型</div><select class="select"><option>安全隐患</option><option>轻微擦伤</option><option>交通事故</option><option>食物中毒</option><option>人员走散</option><option>天气预警</option></select></div>
+        <div class="field"><div class="label"><span class="req">*</span>关联活动</div><select class="select"><option>湿地生态研学营（2026-10-17）</option><option>湿地初探半日营（2026-09-18）</option></select></div>
+        <div class="field"><div class="label"><span class="req">*</span>发生时间</div><input class="input num" value="2026-09-12 14:30"></div>
+        <div class="field"><div class="label">涉及学生</div><input class="input" placeholder="人数与情况描述（脱敏）"></div>
+        <div class="field full"><div class="label"><span class="req">*</span>处置措施</div><textarea class="textarea" placeholder="已采取的现场处置与后续安排"></textarea></div>
+      </div>
+    </div>
+    <div class="modal-foot"><button class="btn ghost" data-close>取消</button><button class="btn danger" onclick="Toast('安全事件已上报，已同步教育局与学校','ok');closeOverlay(document.querySelector('.overlay-mask'))"><span data-icon="siren" data-size="13"></span>立即上报</button></div>`);
+}
+</script>
+</body>
+</html>

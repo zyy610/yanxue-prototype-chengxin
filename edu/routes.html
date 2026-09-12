@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>线路管理 · 教育局管理端 · 研学澄心</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark" data-icon="logo"></span>
+      <span>
+        <span class="brand-name">研学澄心</span>
+        <span class="brand-sub" style="display:block">区县教育局管理端</span>
+      </span>
+    </a>
+    <nav class="nav-main">
+      <a class="nav-item" href="index.html">数据看板</a>
+      <a class="nav-item" href="schools.html">学校管理</a>
+      <a class="nav-item" href="orgs.html">机构管理</a>
+      <a class="nav-item active" href="routes.html">线路管理</a>
+      <a class="nav-item" href="approvals.html">活动审批</a>
+      <a class="nav-item" href="funds.html">资金分账</a>
+      <a class="nav-item" href="safety.html">安全应急</a>
+      <a class="nav-item" href="archive.html">研学档案</a>
+    </nav>
+    <div class="top-actions">
+      <div class="top-search"><span data-icon="search" data-size="14"></span><input placeholder="搜索学校 / 机构 / 活动…"></div>
+      <button class="icon-btn" data-theme-toggle data-theme-ic title="切换明暗主题"></button>
+      <button class="icon-btn" title="通知"><span data-icon="bell"></span><span class="badge-dot"></span></button>
+      <div class="user-chip">
+        <span class="avatar">周</span>
+        <span><span class="u-name" style="display:block">周科长</span><span class="u-role" style="display:block">晴川区教育局 · 科室审批员</span></span>
+        <span data-icon="chevD" data-size="13"></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="breadcrumb">
+    <a href="index.html">教育局管理端</a><span class="sep">/</span><span class="cur">线路管理</span>
+  </div>
+  <div class="page-head">
+    <div>
+      <h1 class="page-title">线路管理（线路库）</h1>
+      <p class="page-sub">备案以机构为独立主体 · 机构间不共享 · 条目标注「机构名称 + 线路名称」</p>
+    </div>
+    <div class="page-actions">
+      <span class="pill warn" style="height:26px">待审核 2 条</span>
+    </div>
+  </div>
+
+  <div class="banner brand mb-16"><span class="b-ic" data-icon="info" data-size="14"></span><div><b>独立备案原则：</b>机构 A 备案通过的线路仅代表机构 A 具备发布资格；机构 B 如需发布相同内容线路，须独立提交备案，教育局按新线路重新审核。学校申报时从线路库勾选，同一主题多家机构可横向对比。</div></div>
+
+  <div class="card">
+    <div class="toolbar" id="mainList">
+      <div class="search-box"><span data-icon="search" data-size="13"></span><input placeholder="搜索机构 / 线路名称 / 目的地" data-search data-scope="#mainList"></div>
+      <select class="select" style="width:120px" data-filter-select="ftheme" data-scope="#mainList">
+        <option value="all">全部主题</option><option value="ziran">自然生态</option><option value="renwen">人文历史</option><option value="laodong">劳动实践</option><option value="keji">科技工业</option><option value="chuantong">传统文化</option>
+      </select>
+      <select class="select" style="width:120px" data-filter-select="fdur">
+        <option value="all">全部时长</option><option value="half">半天</option><option value="one">1 天</option><option value="two">2 天 1 夜</option>
+      </select>
+      <select class="select" style="width:130px" data-filter-select="fgrade">
+        <option value="all">全部年级</option><option value="g12">1-2 年级</option><option value="g34">3-4 年级</option><option value="g56">5-6 年级</option><option value="g79">7-9 年级</option>
+      </select>
+      <select class="select" style="width:120px" data-filter-select="fstatus">
+        <option value="all">全部状态</option><option value="audit">审核中</option><option value="ok">已备案</option><option value="bad">已驳回</option><option value="off">已下架</option>
+      </select>
+      <span class="spacer"></span>
+      <span class="small muted">共 10 条线路</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>线路（机构名称 + 线路名称）</th><th>主题</th><th>时长</th><th>目的地</th><th>适合年级</th><th>收费</th><th>状态</th><th style="text-align:right">操作</th></tr></thead>
+        <tbody>
+          <tr data-searchable data-ftheme="ziran" data-fdur="one" data-fgrade="g34 g56" data-fstatus="ok">
+            <td class="t-main">启程研学教育 · 湿地生态研学营<div class="t-sub">编号 R-2026-071 · 备案通过 2026-07-18</div></td>
+            <td><span class="tag">自然生态</span></td><td>1 天</td><td>晴川湿地公园</td><td>3-6 年级</td><td class="num">¥328/人</td>
+            <td><span class="pill ok"><span class="dot"></span>已备案</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openRoute('启程研学教育','湿地生态研学营')">详情</button><button class="btn danger sm" onclick="forceDown('启程研学教育','湿地生态研学营')">强制下架</button></div></td>
+          </tr>
+          <tr data-searchable data-ftheme="renwen" data-fdur="half" data-fgrade="g56 g79" data-fstatus="ok">
+            <td class="t-main">山海行知研学 · 博物馆里的历史课<div class="t-sub">编号 R-2026-068 · 备案通过 2026-06-30</div></td>
+            <td><span class="tag">人文历史</span></td><td>半天</td><td>市博物馆</td><td>4-8 年级</td><td class="num">¥128/人</td>
+            <td><span class="pill ok"><span class="dot"></span>已备案</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openRoute('山海行知研学','博物馆里的历史课')">详情</button><button class="btn danger sm" onclick="forceDown('山海行知研学','博物馆里的历史课')">强制下架</button></div></td>
+          </tr>
+          <tr data-searchable data-ftheme="laodong" data-fdur="one" data-fgrade="g34 g56" data-fstatus="ok">
+            <td class="t-main">青禾研学 · 茶园采茶劳动实践<div class="t-sub">编号 R-2026-069 · 备案通过 2026-07-05</div></td>
+            <td><span class="tag">劳动实践</span></td><td>1 天</td><td>云岭茶场</td><td>3-6 年级</td><td class="num">¥218/人</td>
+            <td><span class="pill ok"><span class="dot"></span>已备案</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openRoute('青禾研学','茶园采茶劳动实践')">详情</button><button class="btn danger sm" onclick="forceDown('青禾研学','茶园采茶劳动实践')">强制下架</button></div></td>
+          </tr>
+          <tr data-searchable data-ftheme="ziran" data-fdur="two" data-fgrade="g56 g79" data-fstatus="ok">
+            <td class="t-main">松果少年营地 · 星空帐篷之夜<div class="t-sub">编号 R-2026-061 · 备案通过 2026-05-12</div></td>
+            <td><span class="tag">自然生态</span></td><td>2 天 1 夜</td><td>星河露营地</td><td>4-6 年级</td><td class="num">¥498/人</td>
+            <td><span class="pill ok"><span class="dot"></span>已备案</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openRoute('松果少年营地','星空帐篷之夜')">详情</button><button class="btn danger sm" onclick="forceDown('松果少年营地','星空帐篷之夜')">强制下架</button></div></td>
+          </tr>
+          <tr data-searchable data-ftheme="chuantong" data-fdur="one" data-fgrade="g34 g56" data-fstatus="ok">
+            <td class="t-main">星河研学旅行 · 古镇非遗寻访<div class="t-sub">编号 R-2026-073 · 备案通过 2026-08-20</div></td>
+            <td><span class="tag">传统文化</span></td><td>1 天</td><td>安澜古镇</td><td>3-6 年级</td><td class="num">¥268/人</td>
+            <td><span class="pill ok"><span class="dot"></span>已备案</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openRoute('星河研学旅行','古镇非遗寻访')">详情</button><button class="btn danger sm" onclick="forceDown('星河研学旅行','古镇非遗寻访')">强制下架</button></div></td>
+          </tr>
+          <tr data-searchable data-ftheme="keji" data-fdur="half" data-fgrade="g56 g79" data-fstatus="bad">
+            <td class="t-main">笃行研学 · 城市工业研学<div class="t-sub">编号 R-2026-074 · 提交备案 2026-09-06 · 驳回 2026-09-09</div></td>
+            <td><span class="tag">科技工业</span></td><td>半天</td><td>智造工厂</td><td>5-8 年级</td><td class="num">¥158/人</td>
+            <td><span class="pill bad"><span class="dot"></span>已驳回</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openRoute('笃行研学','城市工业研学')">查看驳回原因</button></div></td>
+          </tr>
+          <tr data-searchable data-ftheme="laodong" data-fdur="one" data-fgrade="g12 g34" data-fstatus="ok">
+            <td class="t-main">山海行知研学 · 田野农耕体验<div class="t-sub">编号 R-2026-066 · 备案通过 2026-06-12</div></td>
+            <td><span class="tag">劳动实践</span></td><td>1 天</td><td>绿野农庄</td><td>1-3 年级</td><td class="num">¥188/人</td>
+            <td><span class="pill ok"><span class="dot"></span>已备案</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openRoute('山海行知研学','田野农耕体验')">详情</button><button class="btn danger sm" onclick="forceDown('山海行知研学','田野农耕体验')">强制下架</button></div></td>
+          </tr>
+          <tr data-searchable data-ftheme="ziran" data-fdur="half" data-fgrade="g34 g56" data-fstatus="audit">
+            <td class="t-main">启程研学教育 · 湿地观鸟小课堂<div class="t-sub">编号 R-2026-075 · 提交备案 2026-09-07</div></td>
+            <td><span class="tag">自然生态</span></td><td>半天</td><td>晴川湿地公园</td><td>3-6 年级</td><td class="num">¥168/人</td>
+            <td><span class="pill warn"><span class="dot"></span>审核中</span> <span class="overdue-mark"><span data-icon="clock" data-size="11"></span>超时 3.8 个工作日</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn primary sm" onclick="openAudit('启程研学教育','湿地观鸟小课堂')">审核</button><button class="btn ghost sm" onclick="openRoute('启程研学教育','湿地观鸟小课堂')">详情</button></div></td>
+          </tr>
+          <tr data-searchable data-ftheme="laodong" data-fdur="one" data-fgrade="g12 g34" data-fstatus="audit">
+            <td class="t-main">青禾研学 · 秋收稻田劳动营<div class="t-sub">编号 R-2026-076 · 提交备案 2026-09-09</div></td>
+            <td><span class="tag">劳动实践</span></td><td>1 天</td><td>金穗农场</td><td>1-4 年级</td><td class="num">¥198/人</td>
+            <td><span class="pill warn"><span class="dot"></span>审核中</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn primary sm" onclick="openAudit('青禾研学','秋收稻田劳动营')">审核</button><button class="btn ghost sm" onclick="openRoute('青禾研学','秋收稻田劳动营')">详情</button></div></td>
+          </tr>
+          <tr data-searchable data-ftheme="ziran" data-fdur="one" data-fgrade="g56 g79" data-fstatus="off">
+            <td class="t-main">笃行研学 · 峡谷徒步挑战营<div class="t-sub">编号 R-2026-058 · 因安全整改强制下架 2026-08-15</div></td>
+            <td><span class="tag">自然生态</span></td><td>1 天</td><td>雾岭峡谷</td><td>6-8 年级</td><td class="num">¥298/人</td>
+            <td><span class="pill gray">已下架</span></td>
+            <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openRoute('笃行研学','峡谷徒步挑战营')">查看下架记录</button></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pager"><span>已备案 7 条 · 审核中 2 条 · 已驳回 1 条 · 已下架 1 条</span><div class="pg-btns"><button class="pg-btn" disabled>&lt;</button><button class="pg-btn on">1</button><button class="pg-btn" disabled>&gt;</button></div></div>
+  </div>
+</main>
+
+<footer class="foot">
+  研学澄心 · 高保真原型 V5 · 设计语言「晴空极简」（松石青 / 无侧栏顶部通栏 / 明暗双主题）<br>
+  演示区：晴川区 · 演示数据为虚构样本
+</footer>
+
+<script src="../assets/proto.js"></script>
+<script>
+function openAudit(org, name) {
+  const mask = openDrawer(`
+    <div class="drawer-head"><div><div class="card-title" style="font-size:15px">线路备案审核 · ${org} · ${name}</div><div class="small muted">独立备案主体：${org} · 通过仅对该机构生效</div></div><button class="icon-btn" data-close><span data-icon="x" data-size="14"></span></button></div>
+    <div class="drawer-body">
+      <div class="sec-head">线路信息</div>
+      <div class="kv">
+        <div class="kv-item"><span class="k">主题 / 时长</span><span class="v">自然生态 · 半天</span></div>
+        <div class="kv-item"><span class="k">目的地</span><span class="v">晴川湿地公园</span></div>
+        <div class="kv-item"><span class="k">适合年级</span><span class="v">3-6 年级</span></div>
+        <div class="kv-item"><span class="k">收费</span><span class="v money">¥168/人</span></div>
+      </div>
+      <div class="sec-head mt-16">备案材料</div>
+      <div class="file-row"><span class="f-ic" data-icon="doc"></span><div><div class="f-name">课程方案.pdf</div><div class="f-meta">观鸟课程目标 · 课时安排 · 导师配比 1:15</div></div><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('已打开文件预览（演示）','ok')"><span data-icon="eye" data-size="12"></span>预览</button></div>
+      <div class="file-row"><span class="f-ic" data-icon="doc"></span><div><div class="f-name">安全预案.pdf</div><div class="f-meta">含水域活动防护 · 医疗保障 · 应急预案</div></div><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('已打开文件预览（演示）','ok')"><span data-icon="eye" data-size="12"></span>预览</button></div>
+      <div class="file-row"><span class="f-ic" data-icon="doc"></span><div><div class="f-name">收费标准说明.pdf</div><div class="f-meta">含费用构成明细 · 无隐形收费</div></div><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('已打开文件预览（演示）','ok')"><span data-icon="eye" data-size="12"></span>预览</button></div>
+      <div class="file-row"><span class="f-ic" data-icon="doc"></span><div><div class="f-name">每日行程安排.pdf</div><div class="f-meta">半日行程 · 3 个研学点位</div></div><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('已打开文件预览（演示）','ok')"><span data-icon="eye" data-size="12"></span>预览</button></div>
+      <div class="field mt-16"><div class="label">审核意见</div><textarea class="textarea" placeholder="填写审核意见（驳回时必填，机构修改后可重新提交）"></textarea></div>
+    </div>
+    <div class="drawer-foot"><button class="btn danger" onclick="Toast('已驳回，机构可修改后重新提交备案','warn');closeOverlay(document.querySelector('.drawer-mask'))">驳回补正</button><button class="btn primary" onclick="Toast('${name} 备案通过，仅 ${org} 有效','ok');closeOverlay(document.querySelector('.drawer-mask'))"><span data-icon="check" data-size="13"></span>通过备案</button></div>`);
+}
+function openRoute(org, name) {
+  openDrawer(`
+    <div class="drawer-head"><div><div class="card-title" style="font-size:15px">${org} · ${name}</div><div class="small muted">线路详情 · 备案主体 ${org}</div></div><button class="icon-btn" data-close><span data-icon="x" data-size="14"></span></button></div>
+    <div class="drawer-body">
+      <div class="banner brand mb-12"><span class="b-ic" data-icon="info" data-size="14"></span><div>本线路由 <b>${org}</b> 独立备案。其他机构如需发布相同内容线路，须独立提交备案申请。</div></div>
+      <div class="kv">
+        <div class="kv-item"><span class="k">备案编号</span><span class="v num">R-2026-071</span></div>
+        <div class="kv-item"><span class="k">备案状态</span><span class="v"><span class="pill ok"><span class="dot"></span>已备案</span></span></div>
+        <div class="kv-item"><span class="k">承办活动</span><span class="v">湿地生态研学营（2026-10-17）等 3 场</span></div>
+        <div class="kv-item"><span class="k">累计服务</span><span class="v">1,286 人次</span></div>
+      </div>
+      <div class="sec-head mt-16">备案材料清单</div>
+      <div class="rank-list" style="border:1px solid var(--line);border-radius:8px">
+        <li><span class="rk-name">课程方案.pdf</span><span class="pill ok">已核验</span></li>
+        <li><span class="rk-name">安全预案.pdf</span><span class="pill ok">已核验</span></li>
+        <li><span class="rk-name">收费标准说明.pdf</span><span class="pill ok">已核验</span></li>
+        <li><span class="rk-name">每日行程安排.pdf</span><span class="pill ok">已核验</span></li>
+      </div>
+    </div>
+    <div class="drawer-foot"><button class="btn ghost" data-close>关闭</button></div>`);
+}
+function forceDown(org, name) {
+  openModal(`
+    <div class="modal-head"><div class="modal-title">强制下架线路</div><button class="icon-btn" data-close><span data-icon="x" data-size="14"></span></button></div>
+    <div class="modal-body">
+      <div class="banner warn mb-12"><span class="b-ic" data-icon="alert" data-size="14"></span><div>确认将 <b>${org} · ${name}</b> 强制下架？下架后该线路不可再被学校申报勾选，正在审批中的引用活动将同步中止。</div></div>
+      <div class="field"><div class="label"><span class="req">*</span>下架原因（同步通知机构）</div><textarea class="textarea" placeholder="如：安全检查发现隐患 / 违规经营 / 家长投诉核实"></textarea></div>
+    </div>
+    <div class="modal-foot"><button class="btn ghost" data-close>取消</button><button class="btn danger" onclick="Toast('线路已强制下架，机构与相关学校已收到通知','ok');closeOverlay(document.querySelector('.overlay-mask'))">确认下架</button></div>`);
+}
+</script>
+</body>
+</html>

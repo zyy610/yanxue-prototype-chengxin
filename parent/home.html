@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>研学澄心 · 家长小程序 · 首页</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<main class="phone-stage">
+  <button class="icon-btn" data-theme-toggle data-theme-ic title="切换明暗主题" style="position:fixed;top:16px;right:16px;background:var(--card);border:1px solid var(--line)"></button>
+  <div class="phone">
+    <div class="phone-notch"></div>
+    <div class="phone-screen">
+      <div class="p-status"><span>9:41</span><span style="letter-spacing:1px">研学澄心 · 家长端</span><span>晴川区</span></div>
+      <div class="p-head">
+        <div class="avatar" style="width:34px;height:34px;flex-basis:34px">苏</div>
+        <div style="flex:1"><div class="p-title">研学活动</div><div class="small muted">苏妍 · 家长 · 138****3528</div></div>
+        <button class="icon-btn"><span data-icon="bell"></span><span class="badge-dot"></span></button>
+      </div>
+      <div class="p-body">
+        <div style="display:flex;gap:8px;overflow-x:auto;padding:2px 0 12px">
+          <span class="p-kid-chip" data-kid="all" onclick="switchKid(this)">全部孩子</span>
+          <span class="p-kid-chip on" data-kid="su" onclick="switchKid(this)">苏小禾 · 三年级 2 班</span>
+          <span class="p-kid-chip" data-kid="miao" onclick="switchKid(this)">苏小苗 · 一年级 1 班</span>
+        </div>
+
+        <div class="banner warn mb-12" style="border-radius:10px"><span class="b-ic" data-icon="send" data-size="13"></span><div><b>湿地生态研学营</b> 报名截止 09-30，已报名 86/96，剩余名额 10 个。</div></div>
+
+        <div id="actList">
+          <div class="p-act-card" data-for="su" onclick="location.href='detail.html'">
+            <div class="p-act-img" data-icon="leaf" data-size="52"></div>
+            <div class="p-act-body">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+                <div class="p-act-title">湿地生态研学营</div>
+                <div class="p-price">¥328<small>/人</small></div>
+              </div>
+              <div class="p-act-meta">
+                <span><span data-icon="org" data-size="11"></span>启程研学教育 · 信用 A</span>
+                <span><span data-icon="calendar" data-size="11"></span>2026-10-17</span>
+                <span><span data-icon="pin" data-size="11"></span>晴川湿地公园</span>
+              </div>
+              <div class="flex items-center gap-8 mt-8">
+                <span class="pill brand"><span class="dot"></span>报名中</span>
+                <span class="tag" data-kid-name data-name="su" style="display:none">学生：苏小禾</span>
+                <span class="tag">1 天 · 含午餐</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-act-card" data-for="su" onclick="location.href='detail.html?act=2'">
+            <div class="p-act-img" style="background:linear-gradient(180deg,#e8e3f2 0%,#d8cfea 100%)" data-icon="grid" data-size="52"></div>
+            <div class="p-act-body">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+                <div class="p-act-title">古镇非遗寻访</div>
+                <div class="p-price">¥268<small>/人</small></div>
+              </div>
+              <div class="p-act-meta">
+                <span><span data-icon="org" data-size="11"></span>星河研学旅行 · 信用 B</span>
+                <span><span data-icon="calendar" data-size="11"></span>2026-10-30</span>
+                <span><span data-icon="pin" data-size="11"></span>安澜古镇</span>
+              </div>
+              <div class="flex items-center gap-8 mt-8">
+                <span class="pill gray">报名未开始</span>
+                <span class="tag" data-kid-name data-name="su" style="display:none">学生：苏小禾</span>
+                <span class="tag">3-4 年级 · 1 天</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-card" data-for="miao" style="display:none">
+            <div class="empty"><span class="e-ic" data-icon="search" data-size="30"></span>苏小苗（一年级 1 班）当前没有可报名的活动<br><span class="small">新活动推送后将第一时间通知您</span></div>
+          </div>
+        </div>
+
+        <div class="p-sec-title">平台保障 <span class="small muted">持牌支付机构 · 资金全程存管</span></div>
+        <div class="p-card" style="display:flex;gap:10px;align-items:flex-start">
+          <span data-icon="shield" data-size="16" style="color:var(--brand);flex:0 0 auto;margin-top:2px"></span>
+          <div class="small muted" style="line-height:1.7">本平台交易资金由<b class="brand-ink">持牌支付机构全程存管</b>，活动结束后自动合规分账，平台不触碰资金。支付金额 = 活动费用，平台服务费由机构承担。</div>
+        </div>
+      </div>
+      <div class="p-tabbar">
+        <div class="p-tab on" onclick="location.href='home.html'"><span class="tb-ic" data-icon="home" data-size="19"></span>首页</div>
+        <div class="p-tab" onclick="Toast('活动列表页（演示）','ok')"><span class="tb-ic" data-icon="list" data-size="19"></span>活动</div>
+        <div class="p-tab" onclick="location.href='archive.html'"><span class="tb-ic" data-icon="user" data-size="19"></span>我的</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div style="position:fixed;bottom:14px;left:0;right:0;text-align:center;font-size:11px;color:var(--ink-3)">
+  研学澄心 · 家长报名支付端（微信小程序 · 手机演示）· 设计语言「晴空极简」· 演示数据为虚构样本
+</div>
+
+<script src="../assets/proto.js"></script>
+<script>
+function switchKid(chip) {
+  document.querySelectorAll('.p-kid-chip').forEach(c => c.classList.remove('on'));
+  chip.classList.add('on');
+  const k = chip.dataset.kid;
+  document.querySelectorAll('#actList [data-for]').forEach(card => {
+    const show = k === 'all' || (card.dataset.for || '').split(' ').includes(k);
+    card.style.display = show ? '' : 'none';
+  });
+  document.querySelectorAll('[data-kid-name]').forEach(tag => {
+    tag.style.display = (k === 'all') ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>机构管理 · 教育局管理端 · 研学澄心</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark" data-icon="logo"></span>
+      <span>
+        <span class="brand-name">研学澄心</span>
+        <span class="brand-sub" style="display:block">区县教育局管理端</span>
+      </span>
+    </a>
+    <nav class="nav-main">
+      <a class="nav-item" href="index.html">数据看板</a>
+      <a class="nav-item" href="schools.html">学校管理</a>
+      <a class="nav-item active" href="orgs.html">机构管理</a>
+      <a class="nav-item" href="routes.html">线路管理</a>
+      <a class="nav-item" href="approvals.html">活动审批</a>
+      <a class="nav-item" href="funds.html">资金分账</a>
+      <a class="nav-item" href="safety.html">安全应急</a>
+      <a class="nav-item" href="archive.html">研学档案</a>
+    </nav>
+    <div class="top-actions">
+      <div class="top-search"><span data-icon="search" data-size="14"></span><input placeholder="搜索学校 / 机构 / 活动…"></div>
+      <button class="icon-btn" data-theme-toggle data-theme-ic title="切换明暗主题"></button>
+      <button class="icon-btn" title="通知"><span data-icon="bell"></span><span class="badge-dot"></span></button>
+      <div class="user-chip">
+        <span class="avatar">周</span>
+        <span><span class="u-name" style="display:block">周科长</span><span class="u-role" style="display:block">晴川区教育局 · 科室审批员</span></span>
+        <span data-icon="chevD" data-size="13"></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="breadcrumb">
+    <a href="index.html">教育局管理端</a><span class="sep">/</span><span class="cur">机构管理</span>
+  </div>
+  <div class="page-head">
+    <div>
+      <h1 class="page-title">机构管理</h1>
+      <p class="page-sub">入驻审核 · 资质到期预警 · 信用分级（A/B/C/D）· 机构档案</p>
+    </div>
+  </div>
+
+  <div data-tabs>
+    <div class="tabs">
+      <span class="tab on">机构列表 <span class="cnt">6</span></span>
+      <span class="tab">入驻审核 <span class="cnt">2</span></span>
+    </div>
+
+    <div class="tab-pane on">
+      <div class="banner warn mb-16"><span class="b-ic" data-icon="alert" data-size="14"></span><div><b>资质到期预警：</b>笃行研学（2026-10-09）、松果少年营地（2026-11-30）、星河研学旅行（2026-12-05）临近到期，系统已自动向机构发送提醒。</div></div>
+      <div class="card">
+        <div class="toolbar" id="mainList">
+          <div class="search-box"><span data-icon="search" data-size="13"></span><input placeholder="搜索机构名称" data-search data-scope="#mainList"></div>
+          <select class="select" style="width:130px" data-filter-select data-scope="#mainList">
+            <option value="all">全部信用等级</option><option value="A">A 级</option><option value="B">B 级</option><option value="C">C 级</option><option value="D">D 级</option>
+          </select>
+          <span class="spacer"></span>
+          <span class="small muted">信用分级 = 学校评价 40% + 家长评价 40% + 安全事件 20%</span>
+        </div>
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead><tr><th>机构名称</th><th>机构类型</th><th>信用等级</th><th>入驻时间</th><th>资质到期</th><th>已备案线路</th><th>承办活动</th><th style="text-align:right">操作</th></tr></thead>
+            <tbody>
+              <tr data-searchable data-filter="A">
+                <td class="t-main">启程研学教育<div class="t-sub">统一社会信用代码 9152****0321</div></td>
+                <td>旅行社</td><td><span class="credit A">A</span></td>
+                <td>2024-03-12</td><td class="num">2027-03-15</td><td class="num">2</td><td class="num">12</td>
+                <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openProfile('启程研学教育','A','旅行社')">机构档案</button><button class="btn ghost sm" onclick="Toast('已进入资质管理（演示）','ok')">资质管理</button></div></td>
+              </tr>
+              <tr data-searchable data-filter="A">
+                <td class="t-main">松果少年营地<div class="t-sub">统一社会信用代码 9152****1874</div></td>
+                <td>营地机构</td><td><span class="credit A">A</span></td>
+                <td>2024-05-08</td><td class="num"><span class="bad-ink">2026-11-30</span> <span class="pill warn">82 天后到期</span></td><td class="num">1</td><td class="num">8</td>
+                <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openProfile('松果少年营地','A','营地机构')">机构档案</button><button class="btn ghost sm" onclick="Toast('已进入资质管理（演示）','ok')">资质管理</button></div></td>
+              </tr>
+              <tr data-searchable data-filter="B">
+                <td class="t-main">山海行知研学<div class="t-sub">统一社会信用代码 9152****4482</div></td>
+                <td>旅行社</td><td><span class="credit B">B</span></td>
+                <td>2024-09-20</td><td class="num">2027-08-22</td><td class="num">2</td><td class="num">9</td>
+                <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openProfile('山海行知研学','B','旅行社')">机构档案</button><button class="btn ghost sm" onclick="Toast('已进入资质管理（演示）','ok')">资质管理</button></div></td>
+              </tr>
+              <tr data-searchable data-filter="B">
+                <td class="t-main">星河研学旅行<div class="t-sub">统一社会信用代码 9152****9063</div></td>
+                <td>旅行社</td><td><span class="credit B">B</span></td>
+                <td>2024-11-02</td><td class="num"><span class="bad-ink">2026-12-05</span> <span class="pill warn">87 天后到期</span></td><td class="num">1</td><td class="num">7</td>
+                <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openProfile('星河研学旅行','B','旅行社')">机构档案</button><button class="btn ghost sm" onclick="Toast('已进入资质管理（演示）','ok')">资质管理</button></div></td>
+              </tr>
+              <tr data-searchable data-filter="C">
+                <td class="t-main">青禾研学<div class="t-sub">统一社会信用代码 9152****2517</div></td>
+                <td>教育机构</td><td><span class="credit C">C</span></td>
+                <td>2025-03-15</td><td class="num">2027-01-18</td><td class="num">1</td><td class="num">6</td>
+                <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openProfile('青禾研学','C','教育机构')">机构档案</button><button class="btn ghost sm" onclick="Toast('已进入资质管理（演示）','ok')">资质管理</button></div></td>
+              </tr>
+              <tr data-searchable data-filter="D">
+                <td class="t-main">笃行研学<div class="t-sub">统一社会信用代码 9152****7739</div></td>
+                <td>教育机构</td><td><span class="credit D">D</span></td>
+                <td>2025-07-11</td><td class="num"><span class="bad-ink">2026-10-09</span> <span class="pill bad">27 天后到期</span></td><td class="num">1</td><td class="num">4</td>
+                <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn ghost sm" onclick="openProfile('笃行研学','D','教育机构')">机构档案</button><button class="btn ghost sm" onclick="Toast('已进入资质管理（演示）','ok')">资质管理</button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pager"><span>共 6 家机构 · A 级 2 · B 级 2 · C 级 1 · D 级 1（D 级限制新线路发布）</span><div class="pg-btns"><button class="pg-btn" disabled>&lt;</button><button class="pg-btn on">1</button><button class="pg-btn" disabled>&gt;</button></div></div>
+      </div>
+    </div>
+
+    <div class="tab-pane">
+      <div class="card">
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead><tr><th>机构名称</th><th>提交时间</th><th>机构类型</th><th>法定代表人</th><th>资质文件</th><th>状态</th><th style="text-align:right">操作</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="t-main">新芽研学文化<div class="t-sub">9152****3381</div></td>
+                <td>2026-09-10 15:42</td><td>教育机构</td><td>陆明远</td>
+                <td><span class="pill ok">4/4 已上传</span></td>
+                <td><span class="pill warn"><span class="dot"></span>待初审</span></td>
+                <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn primary sm" onclick="openAudit('新芽研学文化')">审核详情</button></div></td>
+              </tr>
+              <tr>
+                <td class="t-main">云帆营地教育<div class="t-sub">9152****5527</div></td>
+                <td>2026-09-11 09:18</td><td>营地机构</td><td>顾一帆</td>
+                <td><span class="pill gray">3/4 已上传</span></td>
+                <td><span class="pill warn"><span class="dot"></span>待初审</span></td>
+                <td class="t-right"><div class="t-actions" style="justify-content:flex-end"><button class="btn primary sm" onclick="openAudit('云帆营地教育')">审核详情</button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  研学澄心 · 高保真原型 V5 · 设计语言「晴空极简」（松石青 / 无侧栏顶部通栏 / 明暗双主题）<br>
+  演示区：晴川区 · 演示数据为虚构样本
+</footer>
+
+<script src="../assets/proto.js"></script>
+<script>
+function openProfile(name, credit, type) {
+  const mask = openDrawer(`
+    <div class="drawer-head"><div><div class="card-title" style="font-size:15px">${name}</div><div class="small muted">机构档案 · 统一社会信用代码 9152****XXXX</div></div><button class="icon-btn" data-close><span data-icon="x" data-size="14"></span></button></div>
+    <div class="drawer-body">
+      <div class="flex items-center gap-8 mb-12">
+        <span class="credit ${credit}">${credit}</span><span class="tag">${type}</span><span class="pill ok"><span class="dot"></span>正常经营</span><span class="spacer" style="flex:1"></span><span class="small muted">入驻 2024-2025</span>
+      </div>
+      <div class="sec-head">基本信息</div>
+      <div class="kv">
+        <div class="kv-item"><span class="k">联系人</span><span class="v">何老师 · 139****4821</span></div>
+        <div class="kv-item"><span class="k">办公地址</span><span class="v">晴川区创业园 4 号楼</span></div>
+        <div class="kv-item"><span class="k">资质到期</span><span class="v">2027-03-15</span></div>
+        <div class="kv-item"><span class="k">结算账户</span><span class="v">尾号 4821 · 状态正常</span></div>
+      </div>
+      <div class="sec-head mt-16">本机构备案线路（独立备案，仅本机构有效）</div>
+      <div class="rank-list" style="border:1px solid var(--line);border-radius:8px">
+        <li><span class="rk-name">湿地生态研学营</span><span class="pill ok">已备案</span></li>
+        <li><span class="rk-name">湿地观鸟小课堂</span><span class="pill warn">审核中</span></li>
+      </div>
+      <div class="sec-head mt-16">活动记录（2026 年）</div>
+      <div class="rank-list" style="border:1px solid var(--line);border-radius:8px">
+        <li><span class="rk-name">湿地生态研学营 · 晴川实验小学</span><span class="pill brand">报名中</span></li>
+        <li><span class="rk-name">海洋馆奇妙夜 · 晴川第二小学</span><span class="pill gray">已结束</span></li>
+      </div>
+      <div class="sec-head mt-16">结算概况</div>
+      <div class="kv">
+        <div class="kv-item"><span class="k">累计到账</span><span class="v money">¥486,240.00</span></div>
+        <div class="kv-item"><span class="k">待结算</span><span class="v money">¥124,600.00</span></div>
+      </div>
+    </div>
+    <div class="drawer-foot"><button class="btn ghost" data-close>关闭</button><button class="btn primary" onclick="Toast('已打开机构全部记录（演示）','ok')">查看全部记录</button></div>`);
+}
+function openAudit(name) {
+  const mask = openDrawer(`
+    <div class="drawer-head"><div><div class="card-title" style="font-size:15px">入驻审核 · ${name}</div><div class="small muted">提交于 2026-09-10 15:42 · 待科室初审</div></div><button class="icon-btn" data-close><span data-icon="x" data-size="14"></span></button></div>
+    <div class="drawer-body">
+      <div class="sec-head">资质文件（4 项）</div>
+      <div class="file-row"><span class="f-ic" data-icon="doc"></span><div><div class="f-name">营业执照.pdf</div><div class="f-meta">有效期至 2030-06-30 · 已核验</div></div><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('已打开文件预览（演示）','ok')"><span data-icon="eye" data-size="12"></span>预览</button></div>
+      <div class="file-row"><span class="f-ic" data-icon="doc"></span><div><div class="f-name">旅行社经营许可证.pdf</div><div class="f-meta">有效期至 2027-08-22 · 已核验</div></div><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('已打开文件预览（演示）','ok')"><span data-icon="eye" data-size="12"></span>预览</button></div>
+      <div class="file-row"><span class="f-ic" data-icon="doc"></span><div><div class="f-name">研学资质证明.pdf</div><div class="f-meta">市级研学实践教育基地 · 已核验</div></div><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('已打开文件预览（演示）','ok')"><span data-icon="eye" data-size="12"></span>预览</button></div>
+      <div class="file-row"><span class="f-ic" data-icon="doc"></span><div><div class="f-name">研学活动保险方案.pdf</div><div class="f-meta">每人保额 50 万 · 含意外医疗 · 已核验</div></div><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('已打开文件预览（演示）','ok')"><span data-icon="eye" data-size="12"></span>预览</button></div>
+      <div class="field mt-16"><div class="label">审核意见</div><textarea class="textarea" placeholder="填写审核意见（驳回时必填）"></textarea></div>
+    </div>
+    <div class="drawer-foot"><button class="btn danger" onclick="Toast('已驳回，机构将收到补正通知','warn');closeOverlay(document.querySelector('.drawer-mask'))">驳回</button><button class="btn primary" onclick="Toast('${name} 入驻审核通过','ok');closeOverlay(document.querySelector('.drawer-mask'))"><span data-icon="check" data-size="13"></span>审核通过</button></div>`);
+}
+</script>
+</body>
+</html>

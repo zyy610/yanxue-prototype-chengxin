@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生档案与行前行后 · 学校使用端 · 研学澄心</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark" data-icon="logo"></span>
+      <span>
+        <span class="brand-name">研学澄心</span>
+        <span class="brand-sub" style="display:block">学校使用端</span>
+      </span>
+    </a>
+    <nav class="nav-main">
+      <a class="nav-item" href="index.html">工作台</a>
+      <a class="nav-item" href="activities.html">活动申报</a>
+      <a class="nav-item" href="enrollments.html">报名管理</a>
+      <a class="nav-item active" href="archive.html">学生档案</a>
+    </nav>
+    <div class="top-actions">
+      <div class="top-search"><span data-icon="search" data-size="14"></span><input placeholder="搜索活动 / 学生…"></div>
+      <button class="icon-btn" data-theme-toggle data-theme-ic title="切换明暗主题"></button>
+      <button class="icon-btn" title="通知"><span data-icon="bell"></span><span class="badge-dot"></span></button>
+      <div class="user-chip">
+        <span class="avatar">赵</span>
+        <span><span class="u-name" style="display:block">赵老师</span><span class="u-role" style="display:block">晴川实验小学 · 学校管理员</span></span>
+        <span data-icon="chevD" data-size="13"></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="breadcrumb">
+    <a href="index.html">学校使用端</a><span class="sep">/</span><span class="cur">学生档案与行前行后</span>
+  </div>
+  <div class="page-head">
+    <div>
+      <h1 class="page-title">学生档案与行前行后</h1>
+      <p class="page-sub">本校学生历次研学时间线 · 参与率统计（按年级 / 班级钻取）· 行前准备与行后管理</p>
+    </div>
+  </div>
+
+  <div data-tabs>
+    <div class="tabs">
+      <span class="tab on">参与率统计</span>
+      <span class="tab">学生研学时间线</span>
+      <span class="tab">行前管理</span>
+      <span class="tab">行后管理</span>
+    </div>
+
+    <div class="tab-pane on">
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-head"><div><div class="card-title">参与率（按年级）</div><div class="card-sub">2026 年度 · 点击柱形钻取班级明细</div></div></div>
+          <div class="card-pad"><div class="chart-box" id="chGrade"></div></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><div><div class="card-title">三年级参与率（按班级）</div><div class="card-sub">钻取视图 · 三年级 2 班参与率最高</div></div>
+            <select class="select" style="width:110px;height:28px"><option>三年级</option><option>一年级</option><option>二年级</option><option>四年级</option><option>五年级</option><option>六年级</option></select>
+          </div>
+          <div class="card-pad"><div class="chart-box" id="chClass"></div></div>
+        </div>
+      </div>
+      <div class="card mt-16">
+        <div class="card-head"><div><div class="card-title">本校研学概览</div></div></div>
+        <div class="card-pad">
+          <div class="stat-strip">
+            <div class="ss-item"><div class="ss-val">2,846</div><div class="ss-label">在籍学生</div></div>
+            <div class="ss-item"><div class="ss-val">1,782</div><div class="ss-label">年度参与人次</div></div>
+            <div class="ss-item"><div class="ss-val">96.4%</div><div class="ss-label">年度参与率</div></div>
+            <div class="ss-item"><div class="ss-val">14</div><div class="ss-label">年度活动场次</div></div>
+            <div class="ss-item"><div class="ss-val">4.6</div><div class="ss-label">机构平均评分</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane">
+      <div class="card">
+        <div class="toolbar">
+          <div class="search-box" style="width:280px"><span data-icon="search" data-size="13"></span><input placeholder="输入姓名 / 学籍号定位学生"></div>
+          <select class="select" style="width:140px"><option>三年级 2 班</option><option>三年级 5 班</option><option>全校</option></select>
+          <span class="spacer"></span>
+          <span class="small muted">当前查看：苏小禾 · QCSY202300218</span>
+        </div>
+        <div class="card-pad" style="display:flex;gap:24px;flex-wrap:wrap">
+          <div style="flex:1.4;min-width:300px">
+            <ul class="timeline">
+              <li class="done"><div class="tl-title">湿地生态研学营 <span class="pill brand">已报名</span><span class="tl-time">2026-10-17</span></div><div class="tl-body">启程研学教育 · 自然生态 · 1 天 · 晴川湿地公园 · 待出行</div></li>
+              <li class="done"><div class="tl-title">田野农耕体验 <span class="tl-time">2026-08-30</span></div><div class="tl-body">山海行知研学 · 劳动实践 · 学校评价：表现优秀 · 报告与证书已归档</div></li>
+              <li class="done"><div class="tl-title">植物园春日研学 <span class="tl-time">2026-05-09</span></div><div class="tl-body">启程研学教育 · 自然生态 · 学校评价：表现良好 · 报告与证书已归档</div></li>
+            </ul>
+          </div>
+          <div style="flex:1;min-width:240px">
+            <div class="sec-head">档案材料</div>
+            <div class="file-row"><span class="f-ic" data-icon="doc"></span><div><div class="f-name">田野农耕体验 · 研学报告.pdf</div><div class="f-meta">2026-09-02 归档</div></div><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('报告.pdf 已下载','ok')"><span data-icon="download" data-size="12"></span>下载</button></div>
+            <div class="file-row"><span class="f-ic" data-icon="cert"></span><div><div class="f-name">田野农耕体验 · 研学证书.pdf</div><div class="f-meta">含学时认定</div></div><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('证书.pdf 已下载','ok')"><span data-icon="download" data-size="12"></span>下载</button></div>
+            <div class="sec-head mt-12">家长评价</div>
+            <div class="banner brand"><span class="b-ic" data-icon="star" data-size="14"></span><div>满意度 5 星 · 课程 5 / 安全 5 / 餐饮 4.5 / 导师 4.5 / 沟通 5</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane">
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-head"><div><div class="card-title">行前准备 · 湿地初探半日营</div><div class="card-sub">2026-09-18 · 二年级 1-3 班 · 已推送全体家长（不分小组）</div></div></div>
+          <div class="card-pad">
+            <div class="file-row"><span class="f-ic" data-icon="send"></span><div><div class="f-name">行前通知</div><div class="f-meta">集合时间地点 · 注意事项 · 已推送 89 名家长 · 阅读率 97%</div></div><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('已重新推送至未读家长','ok')">补发</button></div>
+            <div class="file-row"><span class="f-ic" data-icon="list"></span><div><div class="f-name">物品清单</div><div class="f-meta">水杯 · 遮阳帽 · 运动鞋 · 双肩包（12 项）</div></div><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('物品清单已推送','ok')">推送</button></div>
+            <div class="file-row"><span class="f-ic" data-icon="video"></span><div><div class="f-name">行前说明会资料</div><div class="f-meta">视频 + 课件 · 待上传</div></div><span class="f-spacer"></span><button class="btn primary sm" onclick="Toast('已选择文件：说明会资料.pptx','ok')"><span data-icon="upload" data-size="12"></span>上传</button></div>
+            <div class="banner gray mt-8"><span class="b-ic" data-icon="info" data-size="14"></span><div>统一推送，不分小组。系统不提供带队教师角色及线上分组功能。</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-head"><div><div class="card-title">行前准备 · 湿地生态研学营</div><div class="card-sub">2026-10-17 · 三年级 2 班 / 5 班</div></div></div>
+          <div class="card-pad">
+            <div class="file-row"><span class="f-ic" data-icon="send"></span><div><div class="f-name">行前通知</div><div class="f-meta">草稿 · 报名结束后发布</div></div><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('已进入编辑（演示）','ok')"><span data-icon="edit" data-size="12"></span>编辑</button></div>
+            <div class="file-row"><span class="f-ic" data-icon="list"></span><div><div class="f-name">物品清单</div><div class="f-meta">参考上期模板复制</div></div><span class="f-spacer"></span><button class="btn ghost sm" onclick="Toast('已复制上期清单为模板','ok')"><span data-icon="copy" data-size="12"></span>复制模板</button></div>
+            <div class="banner info"><span class="b-ic" data-icon="clock" data-size="14"></span><div>行前 72 小时自动提醒家长查看通知与物品清单。</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane">
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-head"><div><div class="card-title">行后管理 · 田野农耕体验</div><div class="card-sub">2026-08-30 · 山海行知研学承办 · 93 人参与</div></div></div>
+          <div class="card-pad">
+            <div class="field"><div class="label">活动总结报告 <span class="pill warn">待填写 · 剩 3 天</span></div>
+              <textarea class="textarea" placeholder="填写活动整体情况：课程完成度、安全保障、学生表现、改进建议…"></textarea>
+              <button class="btn primary mt-8" onclick="Toast('总结报告已提交，将同步至学生档案','ok')">提交报告</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-head"><div><div class="card-title">学生整体评价 & 机构评价</div><div class="card-sub">学校管理员统一评价（不按教师维度拆分）</div></div></div>
+          <div class="card-pad">
+            <div class="field"><div class="label">学生整体表现评价</div>
+              <div class="radio-row mb-8"><label><input type="radio" name="se" checked>优秀</label><label><input type="radio" name="se">良好</label><label><input type="radio" name="se">一般</label></div>
+              <textarea class="textarea" placeholder="整体评价语（将写入每位参与学生的研学档案）"></textarea>
+            </div>
+            <hr class="hr">
+            <div class="field"><div class="label">机构评价（影响机构信用分级）</div>
+              <div class="flex items-center gap-12 mb-8">
+                <span class="small muted">服务质量</span>
+                <span class="pill brand" style="cursor:pointer" onclick="this.innerHTML='★★★★★ <span class=small>5 分</span>'">★ 点击评分</span>
+                <span class="small muted">安全保障</span>
+                <span class="pill brand" style="cursor:pointer" onclick="this.innerHTML='★★★★★ <span class=small>5 分</span>'">★ 点击评分</span>
+              </div>
+              <button class="btn primary" onclick="Toast('评价已提交，将计入山海行知研学信用评分','ok')">提交评价</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  研学澄心 · 高保真原型 V5 · 设计语言「晴空极简」（松石青 / 无侧栏顶部通栏 / 明暗双主题）<br>
+  演示区：晴川区 · 演示数据为虚构样本
+</footer>
+
+<script src="../assets/proto.js"></script>
+<script>
+barChart($('#chGrade'), {
+  height: 210,
+  data: [
+    { label: '一年级', value: 94.2 }, { label: '二年级', value: 92.8 },
+    { label: '三年级', value: 96.4 }, { label: '四年级', value: 91.7 },
+    { label: '五年级', value: 89.3 }, { label: '六年级', value: 90.1 }
+  ], fmt: v => v + '%', unit: '%'
+});
+barChart($('#chClass'), {
+  height: 210, color: 'var(--info)',
+  data: [
+    { label: '1 班', value: 93.2 }, { label: '2 班', value: 97.8 },
+    { label: '3 班', value: 95.1 }, { label: '4 班', value: 94.0 },
+    { label: '5 班', value: 96.6 }
+  ], fmt: v => v + '%', unit: '%'
+});
+</script>
+</body>
+</html>

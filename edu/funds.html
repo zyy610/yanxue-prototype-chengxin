@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>资金分账与对账 · 教育局管理端 · 研学澄心</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark" data-icon="logo"></span>
+      <span>
+        <span class="brand-name">研学澄心</span>
+        <span class="brand-sub" style="display:block">区县教育局管理端</span>
+      </span>
+    </a>
+    <nav class="nav-main">
+      <a class="nav-item" href="index.html">数据看板</a>
+      <a class="nav-item" href="schools.html">学校管理</a>
+      <a class="nav-item" href="orgs.html">机构管理</a>
+      <a class="nav-item" href="routes.html">线路管理</a>
+      <a class="nav-item" href="approvals.html">活动审批</a>
+      <a class="nav-item active" href="funds.html">资金分账</a>
+      <a class="nav-item" href="safety.html">安全应急</a>
+      <a class="nav-item" href="archive.html">研学档案</a>
+    </nav>
+    <div class="top-actions">
+      <div class="top-search"><span data-icon="search" data-size="14"></span><input placeholder="搜索学校 / 机构 / 活动…"></div>
+      <button class="icon-btn" data-theme-toggle data-theme-ic title="切换明暗主题"></button>
+      <button class="icon-btn" title="通知"><span data-icon="bell"></span><span class="badge-dot"></span></button>
+      <div class="user-chip">
+        <span class="avatar">周</span>
+        <span><span class="u-name" style="display:block">周科长</span><span class="u-role" style="display:block">晴川区教育局 · 科室审批员</span></span>
+        <span data-icon="chevD" data-size="13"></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="breadcrumb">
+    <a href="index.html">教育局管理端</a><span class="sep">/</span><span class="cur">资金分账与对账</span>
+  </div>
+  <div class="page-head">
+    <div>
+      <h1 class="page-title">资金分账与对账</h1>
+      <p class="page-sub">家长资金进入持牌支付机构备付金存管账户 · 平台全程不触碰资金 · 满足条件后系统每日 02:00 自动分账</p>
+    </div>
+    <div class="page-actions">
+      <span class="pill ok" style="height:26px"><span class="dot"></span>存管通道正常</span>
+    </div>
+  </div>
+
+  <div data-tabs>
+    <div class="tabs">
+      <span class="tab on">备付金账户总览</span>
+      <span class="tab">交易分账流水</span>
+      <span class="tab">退费管理</span>
+      <span class="tab">对账报表</span>
+      <span class="tab">分账规则</span>
+    </div>
+
+    <div class="tab-pane on">
+      <div class="grid grid-4">
+        <div class="kpi">
+          <span class="k-icon" data-icon="bank"></span>
+          <div class="k-body">
+            <div class="k-label">备付金账户总余额（仅对账，不可动用）</div>
+            <div class="k-value" style="font-size:24px">¥1,286,400.00</div>
+            <div class="k-foot">托管于持牌支付机构 · 实时对账</div>
+          </div>
+        </div>
+        <div class="kpi">
+          <span class="k-icon amber" data-icon="clock"></span>
+          <div class="k-body">
+            <div class="k-label">待分账金额</div>
+            <div class="k-value" style="font-size:24px">¥324,600.00</div>
+            <div class="k-foot">6 场活动 · 无争议期内</div>
+          </div>
+        </div>
+        <div class="kpi">
+          <span class="k-icon blue" data-icon="checkCircle"></span>
+          <div class="k-body">
+            <div class="k-label">已分账金额（2026 年累计）</div>
+            <div class="k-value" style="font-size:24px">¥8,204,300.00</div>
+            <div class="k-foot">机构 98% + 平台 2% 自动划转</div>
+          </div>
+        </div>
+        <div class="kpi">
+          <span class="k-icon pink" data-icon="coin"></span>
+          <div class="k-body">
+            <div class="k-label">平台服务费累计</div>
+            <div class="k-value" style="font-size:24px">¥167,435.00</div>
+            <div class="k-foot">按实付金额 2% 计收</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-32 mt-14">
+        <div class="card">
+          <div class="card-head"><div><div class="card-title">资金流转与自动分账机制</div><div class="card-sub">无争议期默认 7 天 · 不设质保金 · 无冻结资金 · 无需人工确认</div></div></div>
+          <div class="card-pad">
+            <div class="flow" style="flex-wrap:wrap;gap:6px 0">
+              <div class="flow-node"><span class="f-dot" style="border-color:var(--brand);color:var(--brand)">1</span><span class="f-label">家长微信支付</span><span class="f-sub">实付活动费用</span></div>
+              <div class="flow-line done"></div>
+              <div class="flow-node"><span class="f-dot" style="border-color:var(--brand);color:var(--brand)">2</span><span class="f-label">资金进入备付金</span><span class="f-sub">持牌支付机构存管</span></div>
+              <div class="flow-line done"></div>
+              <div class="flow-node"><span class="f-dot" style="border-color:var(--brand);color:var(--brand)">3</span><span class="f-label">活动结束</span><span class="f-sub">以活动结束日期为准</span></div>
+              <div class="flow-line done"></div>
+              <div class="flow-node"><span class="f-dot" style="border-color:var(--brand);color:var(--brand)">4</span><span class="f-label">无争议期届满</span><span class="f-sub">默认 7 天（可配）</span></div>
+              <div class="flow-line done"></div>
+              <div class="flow-node"><span class="f-dot" style="border-color:var(--brand);color:var(--brand)">5</span><span class="f-label">02:00 自动分账</span><span class="f-sub">机构 98% / 平台 2%</span></div>
+            </div>
+            <div class="banner brand mt-16"><span class="b-ic" data-icon="info" data-size="14"></span><div><b>自动分账触发条件（三者全部满足）：</b>① 活动日期已过（状态=已结束）；② 无争议期届满；③ 该活动无未处理投诉或未结案安全事件。系统每日 02:00 自动扫描执行，<b>无需任何人工点击确认</b>；分账失败时教育局可手动「重新分账」。</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-head"><div><div class="card-title">今日分账进度</div><div class="card-sub">2026-09-12 · 次日 02:00 执行</div></div></div>
+          <div class="card-pad">
+            <div class="rank-list">
+              <li><span class="rk-name">星空帐篷之夜 · 晴川实验中学</span><span class="pill warn">无争议期今日届满</span></li>
+              <li><span class="rk-name">田野农耕体验 · 晴川第三小学</span><span class="pill ok">已分账 09-07</span></li>
+              <li><span class="rk-name">海洋馆奇妙夜 · 晴川第二小学</span><span class="pill ok">已分账 06-07</span></li>
+            </div>
+            <div class="banner warn mt-12"><span class="b-ic" data-icon="clock" data-size="14"></span><div>「星空帐篷之夜」无争议期于今日届满，若无未结投诉/安全事件，将于 <b>2026-09-13 02:00</b> 自动分账 ¥24,302.00。</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane">
+      <div class="card">
+        <div class="toolbar" id="mainList">
+          <div class="search-box"><span data-icon="search" data-size="13"></span><input placeholder="搜索学校 / 机构 / 活动 / 流水号" data-search data-scope="#mainList"></div>
+          <select class="select" style="width:130px" data-filter-select="fstatus" data-scope="#mainList">
+            <option value="all">全部状态</option><option value="wait">待分账</option><option value="ok">成功</option><option value="fail">失败</option>
+          </select>
+          <span class="spacer"></span>
+          <button class="btn ghost sm"><span data-icon="download" data-size="12"></span>导出流水</button>
+        </div>
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead><tr><th>支付时间</th><th>金额</th><th>学生 / 活动 / 学校</th><th>分账时间</th><th>机构到账（98%）</th><th>平台服务费（2%）</th><th>支付机构流水号</th><th>状态</th><th style="text-align:right">操作</th></tr></thead>
+            <tbody>
+              <tr data-searchable data-fstatus="wait">
+                <td class="num">2026-09-10 14:22:18</td><td class="num money">¥328.00</td>
+                <td class="t-main">苏小禾<div class="t-sub">湿地生态研学营 · 晴川实验小学</div></td><td class="num muted">—</td><td class="num muted">—</td><td class="num muted">—</td><td class="num mono small">WXPAY20260910142218012</td>
+                <td><span class="pill warn"><span class="dot"></span>待分账</span></td><td class="t-right"><span class="small muted">活动结束+7 天后自动分账</span></td>
+              </tr>
+              <tr data-searchable data-fstatus="wait">
+                <td class="num">2026-09-08 19:03:47</td><td class="num money">¥328.00</td>
+                <td class="t-main">陈嘉树<div class="t-sub">湿地生态研学营 · 晴川实验小学</div></td><td class="num muted">—</td><td class="num muted">—</td><td class="num muted">—</td><td class="num mono small">WXPAY20260908190347186</td>
+                <td><span class="pill warn"><span class="dot"></span>待分账</span></td><td class="t-right"><span class="small muted">活动结束+7 天后自动分账</span></td>
+              </tr>
+              <tr data-searchable data-fstatus="wait">
+                <td class="num">2026-08-31 09:15:42</td><td class="num money">¥498.00</td>
+                <td class="t-main">张一诺<div class="t-sub">星空帐篷之夜 · 晴川实验中学</div></td><td class="num muted">—</td><td class="num muted">—</td><td class="num muted">—</td><td class="num mono small">WXPAY20260831091542357</td>
+                <td><span class="pill warn"><span class="dot"></span>待分账</span></td><td class="t-right"><span class="small muted">预计 2026-09-13 02:00 分账</span></td>
+              </tr>
+              <tr data-searchable data-fstatus="wait">
+                <td class="num">2026-08-30 16:44:03</td><td class="num money">¥498.00</td>
+                <td class="t-main">李思远<div class="t-sub">星空帐篷之夜 · 晴川实验中学</div></td><td class="num muted">—</td><td class="num muted">—</td><td class="num muted">—</td><td class="num mono small">WXPAY20260830164403902</td>
+                <td><span class="pill warn"><span class="dot"></span>待分账</span></td><td class="t-right"><span class="small muted">预计 2026-09-13 02:00 分账</span></td>
+              </tr>
+              <tr data-searchable data-fstatus="ok">
+                <td class="num">2026-08-22 10:22:55</td><td class="num money">¥188.00</td>
+                <td class="t-main">王雨桐<div class="t-sub">田野农耕体验 · 晴川第三小学</div></td><td class="num">2026-09-07 02:00:16</td><td class="num money">¥184.24</td><td class="num">¥3.76</td><td class="num mono small">WXPAY20260822102255641</td>
+                <td><span class="pill ok"><span class="dot"></span>成功</span></td><td class="t-right"><button class="link-btn" onclick="Toast('已打开分账明细（演示）','ok')">明细</button></td>
+              </tr>
+              <tr data-searchable data-fstatus="ok">
+                <td class="num">2026-08-23 14:05:11</td><td class="num money">¥188.00</td>
+                <td class="t-main">刘子墨<div class="t-sub">田野农耕体验 · 晴川第三小学</div></td><td class="num">2026-09-07 02:00:16</td><td class="num money">¥184.24</td><td class="num">¥3.76</td><td class="num mono small">WXPAY20260823140511875</td>
+                <td><span class="pill ok"><span class="dot"></span>成功</span></td><td class="t-right"><button class="link-btn" onclick="Toast('已打开分账明细（演示）','ok')">明细</button></td>
+              </tr>
+              <tr data-searchable data-fstatus="ok">
+                <td class="num">2026-05-18 11:34:09</td><td class="num money">¥268.00</td>
+                <td class="t-main">周若溪<div class="t-sub">海洋馆奇妙夜 · 晴川第二小学</div></td><td class="num">2026-06-07 02:00:08</td><td class="num money">¥262.64</td><td class="num">¥5.36</td><td class="num mono small">WXPAY20260518113409228</td>
+                <td><span class="pill ok"><span class="dot"></span>成功</span></td><td class="t-right"><button class="link-btn" onclick="Toast('已打开分账明细（演示）','ok')">明细</button></td>
+              </tr>
+              <tr data-searchable data-fstatus="fail">
+                <td class="num">2026-05-19 09:52:30</td><td class="num money">¥268.00</td>
+                <td class="t-main">郑好<div class="t-sub">海洋馆奇妙夜 · 晴川第二小学</div></td><td class="num">2026-06-07 02:00:20</td><td class="num muted">—</td><td class="num muted">—</td><td class="num mono small">WXPAY20260519095230713</td>
+                <td><span class="pill bad"><span class="dot"></span>失败</span> <span class="small muted">账户信息有误</span></td>
+                <td class="t-right"><button class="btn primary sm" onclick="retrySplit()">重新分账</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pager"><span>共 8 条演示流水 · 待分账 4 · 成功 3 · 失败 1（机构已修正账户，可重试）</span><div class="pg-btns"><button class="pg-btn" disabled>&lt;</button><button class="pg-btn on">1</button><button class="pg-btn" disabled>&gt;</button></div></div>
+      </div>
+    </div>
+
+    <div class="tab-pane">
+      <div class="banner brand mb-16"><span class="b-ic" data-icon="info" data-size="14"></span><div><b>退费流程：</b>家长线上申请 → 学校管理员审核确认 → 系统调用支付机构原路退款接口。<b>已分账订单的退费</b>不从机构账户划扣，而是从该机构后续活动的待结算款项中自动抵扣（系统自动计算，机构端可见抵扣明细）。</div></div>
+      <div class="card">
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead><tr><th>申请时间</th><th>学生</th><th>活动</th><th>退费金额</th><th>申请原因</th><th>处理进度</th><th>退款方式</th><th style="text-align:right">操作</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="num">2026-09-11 20:14</td><td class="t-main">黄诗涵<div class="t-sub">晴川实验小学 · 三年级 5 班</div></td>
+                <td>湿地生态研学营（2026-10-17）</td><td class="num money">¥328.00</td><td>行程冲突，无法参加</td>
+                <td><span class="pill warn"><span class="dot"></span>待学校审核</span></td><td>原路退款</td>
+                <td class="t-right"><button class="btn ghost sm" onclick="Toast('已向学校管理员发送审核提醒','ok')">提醒学校</button></td>
+              </tr>
+              <tr>
+                <td class="num">2026-09-06 08:31</td><td class="t-main">陈子轩<div class="t-sub">晴川第三小学 · 二年级 2 班</div></td>
+                <td>田野农耕体验（2026-08-30 已结束）</td><td class="num money">¥188.00</td><td>身体不适，已请假</td>
+                <td><span class="pill ok"><span class="dot"></span>退款完成</span></td>
+                <td><span class="tag">已分账订单 · 从机构后续待结算款抵扣</span></td>
+                <td class="t-right"><button class="link-btn" onclick="Toast('抵扣明细：已从山海行知研学后续待结算款中抵扣 ¥188.00','ok')">查看抵扣明细</button></td>
+              </tr>
+              <tr>
+                <td class="num">2026-09-03 12:47</td><td class="t-main">林小满<div class="t-sub">晴川实验中学 · 六年级 1 班</div></td>
+                <td>星空帐篷之夜（2026-09-05 已结束）</td><td class="num money">¥498.00</td><td>活动当天因病未参加</td>
+                <td><span class="pill ok"><span class="dot"></span>退款完成</span></td>
+                <td>原路退款（未分账订单）</td>
+                <td class="t-right"><button class="link-btn" onclick="Toast('退款流水：WXREF20260905103321847','ok')">查看退款流水</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pager"><span>2026 年累计退费 ¥2,658.00 · 其中已分账订单抵扣 ¥188.00</span><div class="pg-btns"><button class="pg-btn" disabled>&lt;</button><button class="pg-btn on">1</button><button class="pg-btn" disabled>&gt;</button></div></div>
+      </div>
+    </div>
+
+    <div class="tab-pane">
+      <div class="card">
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead><tr><th>报表月份</th><th>交易总额</th><th>分账总额</th><th>平台服务费</th><th>退费总额</th><th>生成时间</th><th>状态</th><th style="text-align:right">操作</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="t-main">2026 年 8 月对账报表</td>
+                <td class="num money">¥412,800.00</td><td class="num money">¥404,544.00</td><td class="num money">¥8,256.00</td><td class="num money">¥1,864.00</td>
+                <td class="num">2026-09-01 00:05</td><td><span class="pill ok"><span class="dot"></span>已生成</span></td>
+                <td class="t-right"><button class="btn ghost sm" onclick="Toast('对账报表（教育局版）.pdf 已下载','ok')"><span data-icon="download" data-size="12"></span>下载 PDF</button></td>
+              </tr>
+              <tr>
+                <td class="t-main">2026 年 7 月对账报表</td>
+                <td class="num money">¥312,600.00</td><td class="num money">¥306,348.00</td><td class="num money">¥6,252.00</td><td class="num money">¥794.00</td>
+                <td class="num">2026-08-01 00:05</td><td><span class="pill ok"><span class="dot"></span>已生成</span></td>
+                <td class="t-right"><button class="btn ghost sm" onclick="Toast('对账报表（教育局版）.pdf 已下载','ok')"><span data-icon="download" data-size="12"></span>下载 PDF</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pager"><span>每月 1 日自动生成上月对账报表 · 教育局与机构分别下载各自版本</span><div class="pg-btns"><button class="pg-btn" disabled>&lt;</button><button class="pg-btn on">1</button><button class="pg-btn" disabled>&gt;</button></div></div>
+      </div>
+    </div>
+
+    <div class="tab-pane">
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-head"><div><div class="card-title">分账规则配置</div><div class="card-sub">区县独立配置 · 规则变更即时生效</div></div></div>
+          <div class="card-pad">
+            <div class="field"><div class="label">无争议期天数（活动结束后起算）</div>
+              <div class="radio-row">
+                <label><input type="radio" name="dispute">3 天</label>
+                <label><input type="radio" name="dispute">5 天</label>
+                <label><input type="radio" name="dispute" checked>7 天（默认）</label>
+                <label><input type="radio" name="dispute">10 天</label>
+                <label><input type="radio" name="dispute">14 天</label>
+              </div>
+            </div>
+            <div class="field"><div class="label">分账比例（固定，只读）</div>
+              <div class="stat-strip">
+                <div class="ss-item"><div class="ss-val">98%</div><div class="ss-label">机构结算款</div></div>
+                <div class="ss-item"><div class="ss-val">2%</div><div class="ss-label">平台服务费</div></div>
+              </div>
+              <div class="hint">以实付金额为基数计算。平台服务费由机构承担，不向家长额外收取。</div>
+            </div>
+            <div class="field"><div class="label">自动分账执行时间</div><div class="banner gray"><span class="b-ic" data-icon="clock" data-size="14"></span><div>每日 <b>02:00</b> 自动扫描符合条件（已结束 + 无争议期届满 + 无未结投诉/安全事件）的活动并批量执行，无需人工确认。</div></div></div>
+            <button class="btn primary" onclick="Toast('分账规则已保存并即时生效','ok')">保存规则</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-head"><div><div class="card-title">合规说明</div><div class="card-sub">资金安全 · 规避「二清」风险</div></div></div>
+          <div class="card-pad">
+            <div class="banner brand mb-12"><span class="b-ic" data-icon="shield" data-size="14"></span><div>对接<b>持牌支付机构</b>备付金存管 + 服务商分账模式。平台仅存储指令与日志，<b>全程不触碰资金</b>。</div></div>
+            <div class="rank-list" style="border:1px solid var(--line);border-radius:8px">
+              <li><span class="rk-name">质保金</span><span class="rk-val">不设质保金 · 无冻结资金</span></li>
+              <li><span class="rk-name">分账确认</span><span class="rk-val">无条件自动触发 · 无需机构/教育局确认</span></li>
+              <li><span class="rk-name">失败处理</span><span class="rk-val">机构修正账户后教育局手动重试</span></li>
+              <li><span class="rk-name">已分账退费</span><span class="rk-val">从机构后续待结算款自动抵扣</span></li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  研学澄心 · 高保真原型 V5 · 设计语言「晴空极简」（松石青 / 无侧栏顶部通栏 / 明暗双主题）<br>
+  演示区：晴川区 · 演示数据为虚构样本 · 资金数字仅作界面演示
+</footer>
+
+<script src="../assets/proto.js"></script>
+<script>
+function retrySplit() {
+  openModal(`
+    <div class="modal-head"><div class="modal-title">重新分账</div><button class="icon-btn" data-close><span data-icon="x" data-size="14"></span></button></div>
+    <div class="modal-body">
+      <div class="banner info mb-12"><span class="b-ic" data-icon="info" data-size="14"></span><div>机构「星河研学旅行」已修正结算账户信息，现可对该笔失败分账手动重试。</div></div>
+      <div class="kv">
+        <div class="kv-item"><span class="k">订单</span><span class="v">郑好 · 海洋馆奇妙夜</span></div>
+        <div class="kv-item"><span class="k">金额</span><span class="v money">¥268.00</span></div>
+        <div class="kv-item"><span class="k">机构到账</span><span class="v money">¥262.64（98%）</span></div>
+        <div class="kv-item"><span class="k">平台服务费</span><span class="v money">¥5.36（2%）</span></div>
+      </div>
+    </div>
+    <div class="modal-foot"><button class="btn ghost" data-close>取消</button><button class="btn primary" onclick="Toast('重新分账成功：机构到账 ¥262.64 · 平台服务费 ¥5.36','ok');closeOverlay(document.querySelector('.overlay-mask'))">确认重新分账</button></div>`);
+}
+</script>
+</body>
+</html>
